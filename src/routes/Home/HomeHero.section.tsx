@@ -34,12 +34,17 @@ const HomeHero = () => {
                     <Typography
                         level='h2' fontWeight='400'
                         pb={{ xs: 2, md: 3, lg: 4 }}
-                    >Manufacturing and distribution of components for furniture and construction
+                    >Висококачествени семена за картофи внос от Нидерландия
+                    </Typography>
+                    <Typography
+                        fontSize='smallTitle'
+                        pb={{ xs: 2, md: 2, lg: 2 }}
+                    >Лицензиран вносител на осем ранни, стандартни и късни картофени семена
                     </Typography>
                     <Typography
                         fontSize='smallTitle'
                         pb={{ xs: 8, md: 6, lg: 12 }}
-                    >High quality manufacturing at unbeatable wholsale prices
+                    >Вносител на висококачествени ранни, стандартни и късни картофени семена със свободен лиценз
                     </Typography>
                     <Stack direction={{ xs: 'column', sm: 'row' }} gap={2}>
                         <BlackButton
@@ -47,13 +52,13 @@ const HomeHero = () => {
                             color='neutral'
                             onClick={scrollToCatalogues}
                             endDecorator={<ArrowOutwardIcon />}>
-                            <Typography textColor='inherit' fontSize='inherit'>Catalogues</Typography>
+                            <Typography textColor='inherit' fontSize='inherit'>Семена</Typography>
                         </BlackButton>
                         <BlackButton
                             size='lg'
                             onClick={scrollToContact}
                             endDecorator={<ArrowOutwardIcon />}>
-                            <Typography textColor='inherit' fontSize='inherit'>Request samples</Typography>
+                            <Typography textColor='inherit' fontSize='inherit'>Контакт</Typography>
                         </BlackButton>
                     </Stack>
                 </Stack>

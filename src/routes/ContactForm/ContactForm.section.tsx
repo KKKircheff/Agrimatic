@@ -85,6 +85,7 @@ const ContactForm = () => {
     }
 
     const submit = async (data: ContactInfo) => {
+        return
         try {
             setIsFormValid(true);
             const { name, email, message, phonenumber } = data;
@@ -127,14 +128,14 @@ const ContactForm = () => {
             data-aos-easing="ease-in"
             data-aos-duration="250"
             data-aos-delay="250">
-            <Typography fontSize='xxLargeTitle' fontWeight={200} textColor='primary.500'>CONTACT US</Typography>
-            <Typography pb={3} fontWeight={400} textColor='neutral.600'>Fill in the form below, please. We will be happy to answer your questions and provide you with additional information about our products.</Typography>
+            <Typography fontSize='xxLargeTitle' fontWeight={200} textColor='primary.500'>КОНТАКТ</Typography>
+            <Typography pb={3} fontWeight={400} textColor='neutral.600'>Моля попълнете формата за запитване по-долу. Ще се постараем да отговорим на запитването или да се сържем с вас в рамките на един работен ден.</Typography>
 
             <form onSubmit={handleSubmit(submit)} noValidate>
                 <Grid container spacing={4} mb={3}>
                     <Grid xs={12} md={6}>
                         <FormInputField
-                            label='Name'
+                            label='Имена'
                             type='text'
                             autoComplete='off'
                             required
@@ -143,7 +144,7 @@ const ContactForm = () => {
                         />
 
                         <FormInputField
-                            label='Company (otional)'
+                            label='Компания (незадължително)'
                             type='text'
                             autoComplete='off'
                             name='company'
@@ -152,7 +153,7 @@ const ContactForm = () => {
                         />
 
                         <FormInputField
-                            label='Phone number'
+                            label='Телефон'
                             type='text'
                             name='phonenumber'
                             autoComplete='off'
@@ -161,7 +162,7 @@ const ContactForm = () => {
                         />
 
                         <FormInputField
-                            label='Email'
+                            label='Емейл'
                             type='email'
                             name='email'
                             autoComplete='off'
@@ -172,7 +173,7 @@ const ContactForm = () => {
 
                     <Grid xs={12} md={6}>
                         <FormTextArea
-                            label='Enquiry message'
+                            label='Запитване'
                             name='message'
                             minRows={5}
                             maxRows={10}
@@ -181,11 +182,11 @@ const ContactForm = () => {
                         />
                     </Grid>
                 </Grid>
-                {!isFormValid && <Typography textColor='danger.500' pb={3} mt={-5}>Error: {errorMessage}</Typography>}
+                {!isFormValid && <Typography textColor='danger.500' pb={3} mt={-5}>Невалидна форма {errorMessage}</Typography>}
                 <WhiteButton
                     type="submit"
                     sx={{ maxWidth: 200, borderColor: 'neutral.400', color: 'neutral.800' }}
-                >Send</WhiteButton>
+                >Изпрати</WhiteButton>
             </form>
         </Stack >
     )

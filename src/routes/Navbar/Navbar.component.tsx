@@ -20,12 +20,12 @@ const Navbar = () => {
             <Stack direction='row' fontSize={{ xs: '10vw', md: 'xxxLargeTitle' }}>
                 <Typography
                     fontSize='inherit'
+                    textColor='primary.500'
                     fontWeight='200'
-                    textColor='primary.400'
-                >BUILDERS</Typography>
+                >АГРИ</Typography>
                 <Typography
                     fontSize='inherit'
-                >DEPOT</Typography>
+                >МАТИК</Typography>
             </Stack>
             <WhiteButton
                 size='md'
@@ -33,7 +33,7 @@ const Navbar = () => {
                 variant='outlined'
                 sx={{ maxWidth: { xs: '100%', sm: '200px' } }}
                 onClick={handleScroll}
-            >Contact us</WhiteButton>
+            >КОНТАКТ</WhiteButton>
         </Stack>
     )
 }

@@ -24,11 +24,11 @@ const Home = () => {
             <SectionWrapper minHeight='800px' alignItems='center' justifyContent='center'>
                 <Typography level='h1' textColor='neutral.400'>Under construction</Typography>
             </SectionWrapper>
-            <SectionWrapper width='100%' bgcolor='neutral.100' id='catalogues'>
+            {/* <SectionWrapper width='100%' bgcolor='neutral.100' id='catalogues'>
                 <Suspense fallback={<div>Loading...</div>}>
                     <PdfCarousel />
                 </Suspense>
-            </SectionWrapper>
+            </SectionWrapper> */}
             <SectionWrapper id='contact-form'>
                 <Suspense fallback={<div>Loading...</div>}>
                     <ContactForm />

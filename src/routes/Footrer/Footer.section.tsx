@@ -26,41 +26,41 @@ const Footer = () => {
                 <Stack direction='column' textAlign={{ xs: 'center', md: 'left' }}>
                     <Typography
                         sx={groupTitle}
-                    >COMPANY</Typography>
+                    >КОМПАНИЯ</Typography>
                     <Typography
                         style={groupRow}
-                    >Builders Depot ltd.</Typography>
-                    <Typography
+                    >Агриматик</Typography>
+                    {/* <Typography
                         style={groupRow}
-                    >Bulgaria</Typography>
+                    >Нидерландия</Typography> */}
                 </Stack>
                 <Stack direction='column' textAlign='center'>
                     <Typography
                         sx={groupTitle}
-                    >ADDRESS</Typography>
+                    >АДРЕС</Typography>
                     <Typography
                         style={groupRow}
                         ml={-3}
                         justifyContent={'center'}
                         startDecorator={<PlaceOutlinedIcon sx={{ color: 'primary.500' }} />}
-                    > 8800, Sliven</Typography>
+                    >1138 Младост 4</Typography>
                     <Typography
                         style={groupRow}
-                    >Bulgaria</Typography>
+                    >София, България</Typography>
                     <Typography
                         style={groupRow}
                         ml={-3}
                         justifyContent={'center'}
                         startDecorator={<PlaceOutlinedIcon sx={{ color: 'primary.500' }} />}
-                    > 7511, Enschede</Typography>
+                    > 7513EG, Haaksbergerstraat 294a</Typography>
                     <Typography
                         style={groupRow}
-                    >Nederland</Typography>
+                    >Enschede, Nederland</Typography>
                 </Stack>
                 <Stack direction='column' textAlign={{ xs: 'center', md: 'right' }}>
                     <Typography
                         sx={groupTitle}
-                    >CONTACT</Typography>
+                    >КОНТАКТ</Typography>
                     <Typography
                         style={groupRow}
                         justifyContent={{ xs: 'center', md: 'flex-end' }}
@@ -70,7 +70,7 @@ const Footer = () => {
                         style={groupRow}
                         startDecorator={<LocalPostOfficeOutlinedIcon sx={{ color: 'primary.500' }} />}
                         justifyContent={{ xs: 'center', md: 'flex-end' }}
-                    >contact@buildersdepot.eu</Typography>
+                    >office@agrimatic.bg</Typography>
                 </Stack>
             </SectionWrapper>
         </Stack>
