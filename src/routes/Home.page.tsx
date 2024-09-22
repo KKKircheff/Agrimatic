@@ -4,7 +4,7 @@ import Navbar from "./Navbar/Navbar.component"
 import HomeHero from "./Home/HomeHero.section"
 import { lazy, Suspense } from "react";
 import SectionWrapper from "../components/SectionWrapper.component"
-const PdfCarousel = lazy(() => import('./PdfCarousel/PdfCarousel.section'));
+// const PdfCarousel = lazy(() => import('./PdfCarousel/PdfCarousel.section'));
 const ContactForm = lazy(() => import('./ContactForm/ContactForm.section'));
 import Footer from "./Footrer/Footer.section"
 
