@@ -1,0 +1,15 @@
+[
+    {
+        "Important_Description": " Watch the video in the link below to get more details about cors",
+        "video_link": "https://www.youtube.com/watch?v=tvCIEsk4Uas&t=290s"
+    },
+    {
+        "origin": [
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            "https://builders-depot-14dd5.web.app/"
+        ],
+        "method": ["GET"],
+        "maxAgeSeconds": 3600
+    }
+]
