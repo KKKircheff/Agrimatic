@@ -28,9 +28,9 @@ declare module '@mui/joy/styles' {
 
 export const theme = extendTheme({
     fontFamily: {
-        body: 'HelveticaNeue',
-        display: 'HelveticaNeue',
-        code: 'HelveticaNeue',
+        body: 'Sofia Sans Semi Condensed',
+        display: 'Sofia Sans Semi Condensed',
+        code: 'Sofia Sans Semi Condensed',
         fallback: 'sans-serif',
     },
 

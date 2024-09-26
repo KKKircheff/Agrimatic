@@ -9,7 +9,7 @@ const BlackButton = styled(Button)(({ theme }) => ({
         padding: '14px 0',
         fontSize: theme.fontSize.sm,
         '&:hover': {
-            color: theme.vars.palette.neutral[50],
+            color: theme.vars.palette.neutral[900],
             backgroundColor: 'transparent',
         },
     },

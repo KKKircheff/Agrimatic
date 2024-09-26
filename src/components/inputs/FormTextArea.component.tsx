@@ -1,7 +1,7 @@
 import { FormControl, FormHelperText, FormLabel, Textarea, TextareaProps, useTheme } from '@mui/joy';
 import { useState } from 'react';
 import { Controller, Control } from 'react-hook-form';
-import { ContactInfo } from '../../routes/ContactForm/ContactForm.section';
+import { ContactInfo } from '../../routes/Contact/ContactForm.section';
 
 type Props = {
     label: string;

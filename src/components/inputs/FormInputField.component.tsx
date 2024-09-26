@@ -2,7 +2,7 @@ import { FormControl, FormHelperText, FormLabel, Input, useTheme } from '@mui/jo
 import { InputProps } from '@mui/joy';
 import { useState } from 'react';
 import { Controller, Control } from 'react-hook-form';
-import { ContactInfo, validateField } from '../../routes/ContactForm/ContactForm.section';
+import { ContactInfo, validateField } from '../../routes/Contact/ContactForm.section';
 
 type Props = {
     label: string;
