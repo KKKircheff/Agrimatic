@@ -1,9 +1,10 @@
 
-import { Stack, Typography } from "@mui/joy"
-// import Navbar from "./Navbar/Navbar.component"
+import { Stack } from "@mui/joy"
 import SectionWrapper from "../../components/SectionWrapper.component";
 import HomeHero from "./HomeHero.section";
 import ContactForm from "../Contact/ContactForm.section";
+import HomeCards from "./HomeCards.section";
+import SideTitleText from "../../components/content-sections/SideTitleText.component";
 // const PdfCarousel = lazy(() => import('./PdfCarousel/PdfCarousel.section'));
 
 
@@ -13,11 +14,14 @@ const Home = () => {
         <Stack>
             <SectionWrapper>
                 <HomeHero />
+                <SideTitleText
+                    title='Защо да изберете Агриматик за партньор?'
+                    textContent='Ние доставяме директно до вас висококачествени семена и посадъчен материал за картофи от нидерландски производители. Изключителни представители сме нза седем лицензирани сорта картофи за България. Освен това доставяме сортове със свободен лиценз, като Агрия, Билдстар, Дезире и други.'
+                    mt={16}
+                />
+                <HomeCards pt={16} pb={12} />
             </SectionWrapper>
-            <SectionWrapper minHeight='800px' alignItems='center' justifyContent='center'>
-                <Typography level='h1' textColor='neutral.400'>Under construction</Typography>
-            </SectionWrapper>
-            <SectionWrapper id='contact-form'>
+            <SectionWrapper id='contact-form' pb={8}>
                 <ContactForm />
             </SectionWrapper>
         </Stack>

@@ -3,6 +3,8 @@ import { AspectRatio, Grid, Stack, Typography, useTheme } from "@mui/joy"
 import BlackButton from "../../components/buttons/BlackButton.component";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { scroller } from 'react-scroll'
+import TextContent from '../../components/typography/TextContent.component';
+import HeroTitle from '../../components/typography/HeroTitle.component';
 
 
 const scrollToCatalogues = () => {
@@ -21,7 +23,6 @@ const scrollToContact = () => {
 }
 
 const HomeHero = () => {
-    const c = useTheme().palette;
     const r = useTheme().radius;
 
     return (
@@ -31,27 +32,25 @@ const HomeHero = () => {
             sx={{ flexGrow: 1 }}
             justifyContent='space-between'
             alignItems='center'>
-            <Grid xs={12} md={6} order={{ xs: 1, md: 0 }} py={6}>
+            <Grid xs={12} md={7} order={{ xs: 1, md: 0 }} py={6}>
                 <Stack
                     direction='column'
                     justifyContent='center'
-                    borderLeft={{ md: `1.3px solid ${c.neutral[400]}` }}
-                    pl={{ xs: 0, md: 5 }}>
-                    <Typography
-                        level='h2' fontWeight='400'
+                // borderLeft={{ md: `1.3px solid ${c.neutral[400]}` }}
+                // pl={{ xs: 0, md: 5 }}
+                >
+                    <HeroTitle
                         pb={{ xs: 5, md: 4, lg: 4 }}
-                    >Висококачествени семена за картофи внос от Нидерландия
-                    </Typography>
-                    <Typography
-                        fontSize='smallTitle'
+                    >Сертифицирани семена за картофи от Нидерландия
+                    </HeroTitle>
+                    <TextContent
                         pb={{ xs: 2, md: 2, lg: 2 }}
-                    >Лицензиран вносител на осем ранни, средно ранни и късни картофени семена
-                    </Typography>
-                    <Typography
-                        fontSize='smallTitle'
-                        pb={{ xs: 8, md: 6, lg: 12 }}
+                    >Лицензиран вносител на седем ранни, средно ранни и късни картофени семена
+                    </TextContent>
+                    <TextContent
+                        pb={{ xs: 8, md: 6, lg: 8 }}
                     >Вносител на висококачествени картофени семена със свободен лиценз
-                    </Typography>
+                    </TextContent>
                     <Stack direction={{ xs: 'column', sm: 'row' }} gap={2}>
                         <BlackButton
                             size='lg'
@@ -69,7 +68,7 @@ const HomeHero = () => {
                     </Stack>
                 </Stack>
             </Grid>
-            <Grid xs={12} md={6} lg={6} >
+            <Grid xs={12} md={5} lg={5} >
                 <AspectRatio
                     ratio='1.3'
                     sx={{ borderRadius: r.md }}

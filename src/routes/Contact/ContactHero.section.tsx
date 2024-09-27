@@ -1,5 +1,7 @@
-import { AspectRatio, Grid, Stack, Typography, useTheme } from '@mui/joy'
+import { AspectRatio, Grid, Stack, useTheme } from '@mui/joy'
 import HeroImg from '/images/contact-hero.webp';
+import TextContent from '../../components/typography/TextContent.component';
+import SectionTitle from '../../components/typography/SectionTitle.component';
 const ContactHero = () => {
     // const c = useTheme().palette;
     const r = useTheme().radius;
@@ -16,11 +18,11 @@ const ContactHero = () => {
                     justifyContent='center'
                     // borderLeft={{ md: `1.3px solid ${c.neutral[400]}` }}
                     my={{ xs: 6, md: 0 }}>
-                    <Typography
-                        fontSize='xLargeTitle' fontWeight={300} textColor='primary.500'
-                        py={4}
-                    >КОНТАКТ</Typography>
-                    <Typography fontWeight={400} textColor='neutral.600'>Моля попълнете формата за запитване по-долу. Ще се постараем да отговорим на запитването или да се сържем с вас в рамките на един работен ден.</Typography>
+                    <SectionTitle
+                        textColor="primary.500"
+                        py={6}
+                    >КОНТАКТ</SectionTitle>
+                    <TextContent>Моля, попълнете формата за запитване по-долу. Ще се постараем да отговорим на запитването или да се свържем с вас в рамките на един работен ден.</TextContent>
                 </Stack>
             </Grid>
             <Grid xs={12} md={6} lg={6} >
@@ -31,7 +33,7 @@ const ContactHero = () => {
                     <img src={HeroImg} style={{ width: '100%', height: '100%' }} loading='eager' alt='Home kitchen interior graphics' />
                 </AspectRatio>
             </Grid>
-        </Grid>
+        </Grid >
     )
 }
 

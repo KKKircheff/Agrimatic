@@ -1,10 +1,8 @@
 import { Stack, StackProps } from "@mui/joy"
 
-type Props
-    = {
-        children: React.ReactNode | React.ReactNode[]
-
-    } & StackProps
+interface Props extends StackProps {
+    children: React.ReactNode | React.ReactNode[]
+}
 
 const SectionWrapper = ({ children, ...otherProps }: Props) => {
     return (

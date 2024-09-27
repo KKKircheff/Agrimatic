@@ -4,9 +4,6 @@ import FormTextArea from '../../components/inputs/FormTextArea.component';
 import WhiteButton from '../../components/buttons/WhiteButton.component';
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
-import BlackButton from '../../components/buttons/BlackButton.component';
-import RedButton from '../../components/buttons/PrimaryButton.component';
-import SecondaryButton from '../../components/buttons/SecondaryButton.component';
 
 export type ContactInfo = {
     name: string
