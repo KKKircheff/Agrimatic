@@ -4,6 +4,7 @@ import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import LocalPostOfficeOutlinedIcon from '@mui/icons-material/LocalPostOfficeOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import { TypographyStyle } from '@mui/material';
+import Logo from '../../components/navbar/Logo.section';
 
 const groupTitle: TypographyStyle = {
     fontWeight: 500,
@@ -23,47 +24,48 @@ const Footer = () => {
                 justifyContent='space-between'
                 spacing={4}
                 py={4}>
-                <Stack direction='column' textAlign={{ xs: 'center', md: 'left' }}>
-                    <Typography
-                        sx={groupTitle}
-                    >КОМПАНИЯ</Typography>
-                    <Typography
-                        style={groupRow}
-                    >Агриматик</Typography>
-                    {/* <Typography
-                        style={groupRow}
-                    >Нидерландия</Typography> */}
+                <Stack
+                    direction='column'
+                    alignItems={{ xs: 'center', md: 'flex-start' }}
+                    pr={{ xs: 4, md: 0 }}
+                >
+                    <Logo />
                 </Stack>
-                <Stack direction='column' textAlign='center'>
+                <Stack direction='column' textAlign={{ xs: 'center', md: 'left' }} pt={.5}>
                     <Typography
+                        justifyContent={{ xs: 'center', md: 'flex-start' }}
                         sx={groupTitle}
                     >АДРЕС</Typography>
                     <Typography
                         style={groupRow}
-                        ml={-3}
-                        justifyContent={'center'}
+                        ml={-4}
+                        justifyContent={{ xs: 'center', md: 'flex-start' }}
                         startDecorator={<PlaceOutlinedIcon sx={{ color: 'primary.500' }} />}
                     >1138 Младост 4</Typography>
                     <Typography
                         style={groupRow}
+                        justifyContent={{ xs: 'center', md: 'flex-start' }}
+                        pb={2}
                     >София, България</Typography>
                     <Typography
                         style={groupRow}
-                        ml={-3}
-                        justifyContent={'center'}
+                        ml={-4}
+                        justifyContent={{ xs: 'center', md: 'flex-start' }}
                         startDecorator={<PlaceOutlinedIcon sx={{ color: 'primary.500' }} />}
                     > 7513EG, Haaksbergerstraat 294a</Typography>
                     <Typography
                         style={groupRow}
+                        justifyContent={{ xs: 'center', md: 'flex-start' }}
                     >Enschede, Nederland</Typography>
                 </Stack>
-                <Stack direction='column' textAlign={{ xs: 'center', md: 'right' }}>
+                <Stack direction='column' textAlign={{ xs: 'center', md: 'right' }} pt={.5}>
                     <Typography
                         sx={groupTitle}
                     >КОНТАКТ</Typography>
                     <Typography
                         style={groupRow}
                         justifyContent={{ xs: 'center', md: 'flex-end' }}
+                        pb={2}
                         startDecorator={<LocalPhoneOutlinedIcon sx={{ color: 'primary.500' }} />}
                     >+359 555 555 555</Typography>
                     <Typography

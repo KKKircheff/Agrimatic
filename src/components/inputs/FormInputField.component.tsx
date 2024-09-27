@@ -32,7 +32,7 @@ const FormInputField = ({ label, name, control, required = false, ...otherProps 
                         <FormLabel
                             sx={{
                                 position: 'absolute',
-                                top: (value || isFocused) ? -12 : 14,
+                                top: (value || isFocused) ? -12 : 12,
                                 color: c.neutral[500],
                                 fontWeight: 400,
                                 backgroundColor: c.neutral[50],
@@ -43,6 +43,7 @@ const FormInputField = ({ label, name, control, required = false, ...otherProps 
                             }}>{label}</FormLabel>
                         <Input
                             size='lg'
+                            color='secondary'
                             value={value ? value as string : ''}
                             onFocus={() => setIsFocused(true)}
                             onChange={(event) => {
@@ -55,9 +56,10 @@ const FormInputField = ({ label, name, control, required = false, ...otherProps 
                             sx={{
                                 borderRadius: 5,
                                 borderWidth: 1.3,
-                                fontWeight: 300,
+                                fontWeight: 400,
                                 fontSize: 'sm',
-                                color: c.neutral[500]
+                                color: c.neutral[500],
+                                borderColor: c.neutral[300]
                             }}
                             {...otherProps}
                         />

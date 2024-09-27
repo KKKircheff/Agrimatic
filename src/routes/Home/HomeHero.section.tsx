@@ -26,7 +26,8 @@ const HomeHero = () => {
 
     return (
         <Grid
-            container spacing={6}
+            container spacing={{ xs: 0, md: 6 }}
+            pt={{ xs: 0, md: 2 }}
             sx={{ flexGrow: 1 }}
             justifyContent='space-between'
             alignItems='center'>
@@ -35,10 +36,10 @@ const HomeHero = () => {
                     direction='column'
                     justifyContent='center'
                     borderLeft={{ md: `1.3px solid ${c.neutral[400]}` }}
-                    pl={{ xs: 0, md: 5 }} my={{ xs: 6, md: 0 }}>
+                    pl={{ xs: 0, md: 5 }}>
                     <Typography
                         level='h2' fontWeight='400'
-                        pb={{ xs: 2, md: 3, lg: 4 }}
+                        pb={{ xs: 5, md: 4, lg: 4 }}
                     >Висококачествени семена за картофи внос от Нидерландия
                     </Typography>
                     <Typography
@@ -49,7 +50,7 @@ const HomeHero = () => {
                     <Typography
                         fontSize='smallTitle'
                         pb={{ xs: 8, md: 6, lg: 12 }}
-                    >Вносител на висококачествени ранни, средно ранни и късни картофени семена със свободен лиценз
+                    >Вносител на висококачествени картофени семена със свободен лиценз
                     </Typography>
                     <Stack direction={{ xs: 'column', sm: 'row' }} gap={2}>
                         <BlackButton
@@ -70,9 +71,8 @@ const HomeHero = () => {
             </Grid>
             <Grid xs={12} md={6} lg={6} >
                 <AspectRatio
-                    ratio='1.2'
-                    sx={{ borderRadius: `${r.full} 0 0 ${r.full}` }}
-                // sx={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 74%)' }}
+                    ratio='1.3'
+                    sx={{ borderRadius: r.md }}
                 >
                     <img src={HeroImg} style={{ width: '100%', height: '100%' }} loading='eager' alt='Home kitchen interior graphics' />
                 </AspectRatio>

@@ -11,11 +11,9 @@ const Home = () => {
 
     return (
         <Stack>
-            <Stack mb={4}>
-                <SectionWrapper>
-                    <HomeHero />
-                </SectionWrapper>
-            </Stack>
+            <SectionWrapper>
+                <HomeHero />
+            </SectionWrapper>
             <SectionWrapper minHeight='800px' alignItems='center' justifyContent='center'>
                 <Typography level='h1' textColor='neutral.400'>Under construction</Typography>
             </SectionWrapper>

@@ -1,8 +1,8 @@
 import { Button, styled } from "@mui/joy";
 
-const WhiteButton = styled(Button)(({ theme }) => ({
-    border: `1.4px solid ${theme.vars.palette.neutral[400]}`,
-    color: theme.vars.palette.neutral[500],
+const PrimaryButton = styled(Button)(({ theme }) => ({
+    border: `1.2px solid ${theme.vars.palette.primary[500]}`,
+    color: theme.vars.palette.primary[500],
     backgroundColor: theme.vars.palette.neutral[50],
     fontWeight: 400,
     [theme.breakpoints.up('xs')]: {
@@ -10,15 +10,14 @@ const WhiteButton = styled(Button)(({ theme }) => ({
         padding: '14px 0',
         fontSize: theme.fontSize.sm,
         '&:hover': {
-            color: theme.vars.palette.neutral[900],
+            color: theme.vars.palette.primary[500],
             backgroundColor: theme.vars.palette.neutral[50],
-            fontWeight: 300,
         },
     },
     [theme.breakpoints.up('md')]: {
         '&:hover': {
             color: theme.vars.palette.neutral[50],
-            backgroundColor: theme.vars.palette.neutral[900],
+            backgroundColor: theme.vars.palette.primary[500],
         },
     },
     [theme.breakpoints.up('lg')]: {
@@ -31,4 +30,4 @@ const WhiteButton = styled(Button)(({ theme }) => ({
     borderRadius: '100px',
 }))
 
-export default WhiteButton
+export default PrimaryButton

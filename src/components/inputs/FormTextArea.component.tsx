@@ -39,10 +39,11 @@ const FormTextArea = ({ label, name, control, required = false, ...otherProps }:
                                 marginLeft: 2,
                                 padding: '0 8px',
                                 zIndex: 2,
-                                transition: '.2s top ease-in'
+                                transition: '.2s top ease-in',
                             }}>{label}</FormLabel>
                         <Textarea
                             size='lg'
+                            color='secondary'
                             value={value ? value as string : ''}
                             onFocus={() => setIsFocused(true)}
                             onChange={(event) => {
@@ -52,7 +53,7 @@ const FormTextArea = ({ label, name, control, required = false, ...otherProps }:
                                 setIsFocused(false)
                                 onChange(event.target.value)
                             }}
-                            sx={{ borderRadius: 5, color: c.neutral[500] }}
+                            sx={{ borderRadius: 5, color: c.neutral[500], borderColor: 'neutral.300', fontSize: { xs: 'sm', md: 'md' } }}
                             {...otherProps}
                         />
                         {errors && <FormHelperText sx={{ color: c.danger[500] }}> {error && error.message}</FormHelperText>}

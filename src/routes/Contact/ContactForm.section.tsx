@@ -4,6 +4,9 @@ import FormTextArea from '../../components/inputs/FormTextArea.component';
 import WhiteButton from '../../components/buttons/WhiteButton.component';
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
+import BlackButton from '../../components/buttons/BlackButton.component';
+import RedButton from '../../components/buttons/PrimaryButton.component';
+import SecondaryButton from '../../components/buttons/SecondaryButton.component';
 
 export type ContactInfo = {
     name: string
@@ -123,13 +126,11 @@ const ContactForm = () => {
     return (
         <Stack
             spacing={5}
-            py={12}
+            py={3}
             data-aos="fade-right"
             data-aos-easing="ease-in"
             data-aos-duration="250"
             data-aos-delay="250">
-            <Typography fontSize='xLargeTitle' fontWeight={300} textColor='primary.500'>КОНТАКТ</Typography>
-            <Typography pb={3} fontWeight={400} textColor='neutral.600'>Моля попълнете формата за запитване по-долу. Ще се постараем да отговорим на запитването или да се сържем с вас в рамките на един работен ден.</Typography>
 
             <form onSubmit={handleSubmit(submit)} noValidate>
                 <Grid container spacing={4} mb={3}>
@@ -185,7 +186,7 @@ const ContactForm = () => {
                 {!isFormValid && <Typography textColor='danger.500' pb={3} mt={-5}>Невалидна форма {errorMessage}</Typography>}
                 <WhiteButton
                     type="submit"
-                    sx={{ maxWidth: 200, borderColor: 'neutral.400', color: 'neutral.800' }}
+                    sx={{ maxWidth: 200 }}
                 >Изпрати</WhiteButton>
             </form>
         </Stack >
