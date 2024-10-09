@@ -1,10 +1,11 @@
+import { Typography } from '@mui/joy';
 import './PageLoaderSkeleton.styles.scss'
 
 const PageLoaderSkeleton: React.FC = () => {
     return (
         <div className='page-loader-skeleton'>
-            <p>AGRIMATIC</p>
-            <p>Вносител на висококачествен разсад за картофи от Нидерландия</p>
+            <Typography textColor={'primary.200'}>AGRIMATIC</Typography>
+            <Typography textColor={'primary.200'}>Вносител на висококачествен разсад за картофи от Нидерландия</Typography>
         </div>
     );
 };

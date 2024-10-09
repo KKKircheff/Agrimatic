@@ -1,7 +1,7 @@
 import {initializeApp} from 'firebase/app';
-import {getAnalytics} from 'firebase/analytics';
+// import {getAnalytics} from 'firebase/analytics';
 // import {getAuth, User} from 'firebase/auth';
-import {getAuth} from 'firebase/auth';
+// import {getAuth} from 'firebase/auth';
 import {getFirestore} from 'firebase/firestore';
 // import {doc, getDoc, getFirestore, setDoc} from 'firebase/firestore';
 import {firebaseConfig} from './firebase-config';
@@ -21,11 +21,11 @@ import {
 
 const app = initializeApp(firebaseConfig);
 
-export const analitycs = getAnalytics(app);
+// export const analitycs = getAnalytics(app);
 
-export const auth = getAuth(app);
+// export const auth = getAuth(app);
 
-export const db = getFirestore(app);
+// export const db = getFirestore(app);
 
 export const storage = getStorage(app);
 

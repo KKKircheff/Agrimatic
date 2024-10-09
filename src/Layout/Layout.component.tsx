@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop.component";
 import NavBar from "../components/navbar/NavBar.component";
 import UnderNavBar from "../components/navbar/UnderNavBar.component";
-import Footer from "../routes/Footrer/Footer.section";
+import Footer from "../routes/Footer/Footer.section";
 
 
 export interface Item {

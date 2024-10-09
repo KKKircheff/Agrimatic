@@ -1,196 +1,23 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-::selection {
-    background: hsl(0, 0%, 90%);
-}
-
-/* SofiaSansSemiCondensed-Thin (100) */
 @font-face {
     font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-Thin.ttf') format('truetype');
-    font-weight: 100;
+    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
-/* SofiaSansSemiCondensed-ThinItalic (100) */
 @font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-ThinItalic.ttf') format('truetype');
-    font-weight: 100;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-ExtraLight (200) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-ExtraLight.ttf') format('truetype');
-    font-weight: 200;
+    font-family: 'Open Sans';
+    src: url('/fonts/Open_Sans/OpenSans-VariableFont_wdth_wght.ttf') format('truetype');
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
-/* SofiaSansSemiCondensed-ExtraLightItalic (200) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-ExtraLightItalic.ttf') format('truetype');
-    font-weight: 200;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-Light (300) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-/* SofiaSansSemiCondensed-LightItalic (300) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-Regular (400) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* SofiaSansSemiCondensed-Italic (400) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-Medium (500) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* SofiaSansSemiCondensed-MediumItalic (500) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-SemiBold (600) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-/* SofiaSansSemiCondensed-SemiBoldItalic (600) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-SemiBoldItalic.ttf') format('truetype');
-    font-weight: 600;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-Bold (700) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-/* SofiaSansSemiCondensed-BoldItalic (700) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-ExtraBold (800) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
-
-/* SofiaSansSemiCondensed-ExtraBoldItalic (800) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-ExtraBoldItalic.ttf') format('truetype');
-    font-weight: 800;
-    font-style: italic;
-}
-
-/* SofiaSansSemiCondensed-Black (900) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-/* SofiaSansSemiCondensed-BlackItalic (900) */
-@font-face {
-    font-family: 'Sofia Sans Semi Condensed';
-    src: url('/fonts/SofiaSansSemiCondensed/SofiaSansSemiCondensed-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-}
-
-body {
-    font-family: 'Sofia Sans Semi Condensed', system-ui, sans-serif;
-}
-
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
-}
-
-.card {
-    padding: 2em;
-}
-
-.read-the-docs {
-    color: #22272a;
-}
+// @font-face {
+//     font-family: 'Jost';
+//     src: url('/fonts/Jost/Jost-VariableFont_wght.ttf') format('truetype');
+//     font-weight: 100 900;
+//     font-style: normal;
+//     font-display: swap;
+// }

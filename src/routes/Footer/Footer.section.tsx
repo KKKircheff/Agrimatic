@@ -18,7 +18,7 @@ const groupRow: TypographyStyle = {
 
 const Footer = () => {
     return (
-        <Stack direction='row' bgcolor='neutral.100' minHeight='200px' alignItems='left' py={5}>
+        <Stack direction='row' bgcolor='primary.50' minHeight='200px' alignItems='left' py={5}>
             <SectionWrapper
                 direction={{ xs: 'column', md: 'row' }}
                 justifyContent='space-between'

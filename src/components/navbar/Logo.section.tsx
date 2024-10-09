@@ -15,11 +15,11 @@ const Logo = () => {
             <img src={logo} style={{ width: '40px', height: '40px' }} loading='eager' alt='Agrimatic logo' />
             <Typography
                 level='h2'
-                fontWeight={400}
+                fontWeight={500}
                 letterSpacing={1}
-                textColor='primary.500'
-                fontSize={{ xs: 'lg', md: 'xl', lg: 'mediumTitle' }}>
-                АГРИМАТИК
+                textColor='neutral.700'
+                fontSize={{ xs: 'lg', md: 'xl', lg: 'xl' }}>
+                АгриМатик
             </Typography>
         </Stack>
     )

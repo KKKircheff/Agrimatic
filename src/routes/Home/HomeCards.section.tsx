@@ -2,8 +2,8 @@ import { Grid, StackProps } from "@mui/joy";
 import BenefitCard from "../../components/cards/BenefitCard.component";
 import { TbTruckDelivery } from "react-icons/tb";
 import { LuScrollText } from "react-icons/lu";
-import { IoInformationCircleOutline } from "react-icons/io5";
 import { PiLeafBold } from "react-icons/pi";
+import { MdOutlineAutorenew } from "react-icons/md";
 
 interface Props extends StackProps { }
 
@@ -11,7 +11,7 @@ const HomeCards = ({ ...otherProps }: Props) => {
     return (
         <Grid
             container
-            spacing={{ xs: 6, md: 6 }} // Space between grid items
+            spacing={{ xs: 4, md: 4 }} // Space between grid items
             {...otherProps}
         >
             {/* Grid item for each card */}
@@ -43,7 +43,7 @@ const HomeCards = ({ ...otherProps }: Props) => {
                 <BenefitCard
                     title='Актуална информация'
                     content='Пазарът на разсадно семе за картофи е много динамичен, както по отношение на цени, така и на наличности. При запитване, Агриматик ще ви предостави най-добрите цени, налични в Нидерландия за сорта, на който сте се спрели, при условие, че има потвърдена наличност от нашите бизнес партньори.'
-                    icon={IoInformationCircleOutline}
+                    icon={MdOutlineAutorenew}
                     iconSize={32}
                 />
             </Grid>

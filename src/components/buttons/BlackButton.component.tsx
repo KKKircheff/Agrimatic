@@ -6,7 +6,8 @@ const BlackButton = styled(Button)(({ theme }) => ({
     fontWeight: 300,
     [theme.breakpoints.up('xs')]: {
         width: '100%',
-        padding: '14px 0',
+        padding: '10px 0',
+        minWidth: '130px',
         fontSize: theme.fontSize.sm,
         '&:hover': {
             color: theme.vars.palette.neutral[900],

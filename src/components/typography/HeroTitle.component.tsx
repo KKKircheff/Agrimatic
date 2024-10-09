@@ -8,10 +8,9 @@ interface HeroTitleProps extends TypographyProps {
 const HeroTitle = ({ children, ...otherProps }: HeroTitleProps) => {
     return (
         <Typography
-            fontSize={{ xs: 'largeTitle', sm: 'xxLargeTitle', lg: 'xxxLargeTitle' }}
+            fontSize={{ xs: 'largeTitle', sm: 'xLargeTitle', lg: 'xxxLargeTitle' }}
+            fontFamily={'Open Sans'}
             fontWeight={700}
-            lineHeight='3rem'
-            py={4}
             {...otherProps}
         >
             {children}

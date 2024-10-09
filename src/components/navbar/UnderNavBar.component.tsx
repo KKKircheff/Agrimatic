@@ -4,7 +4,7 @@ const UnderNavBar = () => {
     return (
         <Box
             bgcolor='transparent'
-            height={'100px'}
+            height={'70px'}
         >
         </Box>
     )

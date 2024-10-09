@@ -10,8 +10,8 @@ const CardTitle = ({ children, ...otherProps }: CardTitleProps) => {
         <Typography
             fontSize='largeTitle'
             fontWeight={300}
-            lineHeight='3rem'
-            py={4}
+            lineHeight='2rem'
+            py={2}
             {...otherProps}
         >
             {children}

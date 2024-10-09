@@ -43,7 +43,7 @@ const FormInputField = ({ label, name, control, required = false, ...otherProps 
                             }}>{label}</FormLabel>
                         <Input
                             size='lg'
-                            color='secondary'
+                            color='primary'
                             value={value ? value as string : ''}
                             onFocus={() => setIsFocused(true)}
                             onChange={(event) => {

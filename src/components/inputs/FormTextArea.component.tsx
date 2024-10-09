@@ -43,7 +43,7 @@ const FormTextArea = ({ label, name, control, required = false, ...otherProps }:
                             }}>{label}</FormLabel>
                         <Textarea
                             size='lg'
-                            color='secondary'
+                            color='primary'
                             value={value ? value as string : ''}
                             onFocus={() => setIsFocused(true)}
                             onChange={(event) => {

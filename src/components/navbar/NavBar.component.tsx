@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, useTheme, Stack, List } from '@mui/joy';
+import { Box, Stack, List } from '@mui/joy';
 import SectionWrapper from '../SectionWrapper.component';
 import ListMenuItem from './ListMenuItem.component';
 import SideDrawer from './SideDrawer.component';
@@ -11,7 +11,7 @@ const NavBar = () => {
     const bgColor = '#ffffffc0'
     // const c = useTheme().palette;
     // const r = useTheme().radius;
-    const s = useTheme().shadow;
+    // const s = useTheme().shadow;
 
     const maxNavHeight = '80px'
 
@@ -41,7 +41,6 @@ const NavBar = () => {
             top={{ xs: '0px', md: '0px' }}
             left={0} zIndex='1999'
             sx={{ backdropFilter: 'blur(5px)', maxHeight: maxNavHeight }}
-            boxShadow={s.xs}
             bgcolor={bgColor}
             width={'100%'}>
             <SectionWrapper >

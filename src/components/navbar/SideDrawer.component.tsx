@@ -3,11 +3,11 @@ import {
     ModalClose,
     Stack,
     Drawer,
-    Typography,
 } from '@mui/joy';
 
 import ListMenuItem from './ListMenuItem.component';
 import { styleVariables } from '../../styles/styleVariables';
+import Logo from './Logo.section';
 
 type Item = {
     name: string,
@@ -23,7 +23,6 @@ type Props = {
 }
 
 const SideDrawer = ({ items, isDrawerOpen, setIsDrawerOpen, bgColor }: Props) => {
-    // const { xs, md, lg } = styleVariables.layoutPadding;
 
     return (
         <Drawer
@@ -43,47 +42,29 @@ const SideDrawer = ({ items, isDrawerOpen, setIsDrawerOpen, bgColor }: Props) =>
 
             <Stack
                 direction='column'
-                mt='80px'
-                mx={styleVariables.layoutPadding}
-                px={3}
-                py={2}
-                gap={3}
-                borderRadius='xl'
-                boxSizing='border-box'
-                overflow='hidden'
+                mt='80px' mx={styleVariables.layoutPadding}
+                px={3} py={2} gap={3}
+                borderRadius='xl' boxSizing='border-box' overflow='hidden'
                 bgcolor={bgColor}
                 sx={{
                     backdropFilter: 'blur(5px)',
                     transition: 'all .2s ease-in'
                 }}
             >
-
                 <Stack direction='row' justifyContent='space-between' alignItems='center'>
-                    <Typography
-                        level='h2'
-                        fontWeight={400}
-                        letterSpacing={1}
-                        textColor='primary.500'
-                        fontSize={{ xs: 'lg', md: 'xl', lg: 'xxLargeTitle' }}>
-                        АГРИМАТИК
-                    </Typography>
-
+                    <Logo />
                     <ModalClose id="close-icon" sx={{ position: 'initial', cursor: 'pointer', borderRadius: '50px', background: 'transparent' }} />
                 </Stack>
 
                 <List
-                    component="nav"
-                    size="lg"
+                    component="nav" size="lg"
                     sx={{
                         flex: 'none',
                         fontSize: 'xl',
                         '& > div': { justifyContent: 'center' },
                     }}>
-                    {items.map((item) => <ListMenuItem
-                        key={item.name}
-                        item={item}
-                        setIsDrawerOpen={setIsDrawerOpen}
-                    />)}
+                    {items.map((item) =>
+                        <ListMenuItem key={item.name} item={item} setIsDrawerOpen={setIsDrawerOpen} />)}
                 </List>
             </Stack>
         </Drawer>

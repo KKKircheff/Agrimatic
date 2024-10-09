@@ -23,12 +23,13 @@ const BenefitCard = ({ title, content, icon, iconSize = 30 }: Props) => {
                 display: "flex", // Enable flexbox on the card
                 flexDirection: "column", // Stack elements vertically
                 justifyContent: "space-between", // Distribute space evenly
-                backgroundColor: "neutral.100",
-                padding: 3
+                backgroundColor: "primary.50",
+                borderColor: "primary.100",
+                padding: { xs: 2, md: 3 }
             }}
         >
             <Stack direction="column" justifyContent="space-between">
-                <Avatar sx={{ backgroundColor: "secondary.600", color: "secondary.300" }}>
+                <Avatar sx={{ backgroundColor: "primary.700", color: "primary.400" }}>
                     {createElement(icon, { size: iconSize })}
                 </Avatar>
             </Stack>
