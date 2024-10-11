@@ -26,7 +26,7 @@ export const VarietyCard = ({ variety }: Props) => {
         >
             <Grid container direction={{ xs: 'column', md: 'row' }} spacing={3}>
                 <Grid xs={12} md={4} lg={3} xl={2.5} height='100%' >
-                    <ImageCard url='/images/potatoes-crate.webp' aspect={1} />
+                    <ImageCard url={variety.skin === 'Жълта' ? '/images/potato_yellow.webp' : '/images/potato_red.webp'} aspect={1} />
                 </Grid>
 
                 <Grid xs={12} md={8} lg={9} xl={9.5} minHeight='100%' gap={2}>

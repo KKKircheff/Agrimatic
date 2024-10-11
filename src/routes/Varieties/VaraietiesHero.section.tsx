@@ -22,18 +22,21 @@ export const VaraietiesHero = () => {
                 </TextContent>
             </Stack>
 
-            <Grid container spacing={{ xs: 1, md: 1 }} py={{ xs: 3, md: 6 }} direction={{ xs: 'column', md: 'row' }} mt={{ xs: 0, md: '-100px' }}>
-                <Grid xs={12} md={3} height='100%' >
-                    <ImageCard url='/images/potatoes-crate.webp' aspect={1} />
+            <Grid
+                container direction={{ xs: 'column', md: 'row' }}
+                spacing={{ xs: 1, md: 1 }} py={{ xs: 3, md: 6 }} mt={{ xs: 0, md: '-150px' }}
+                alignItems='flex-end'>
+                <Grid xs={12} md={3} height='100%'>
+                    {screenWidth >= 900 && <ImageCard url='/images/variety_1.webp' aspect={1} />}
                 </Grid>
                 <Grid xs={12} md={3} minHeight='100%' alignSelf='flex-end'>
-                    {screenWidth >= 900 && <ImageCard url='/images/hero-image-2.webp' aspect={3} />}
+                    <ImageCard url='/images/variety_2.webp' aspect={screenWidth >= 900 ? 2 : 1} />
                 </Grid>
                 <Grid xs={12} md={3} minHeight='100%' alignSelf='flex-end'>
-                    {screenWidth >= 900 && <ImageCard url='/images/hero-image-2.webp' aspect={2} />}
+                    {screenWidth >= 900 && <ImageCard url='/images/variety_3.webp' aspect={1.5} />}
                 </Grid>
                 <Grid xs={12} md={3} height='100%'>
-                    {screenWidth >= 900 && <ImageCard url='/images/potatoes-crate.webp' aspect={1} />}
+                    {screenWidth >= 900 && <ImageCard url='/images/variety_4.webp' aspect={.8} />}
                 </Grid>
             </Grid>
         </Stack >
