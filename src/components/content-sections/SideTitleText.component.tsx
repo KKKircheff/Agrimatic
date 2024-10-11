@@ -11,7 +11,7 @@ const SideTitleText = ({ title, textContent, ...ottherProps }: Props) => {
     return (
         <Grid
             container
-            spacing={2}
+            spacing={3}
             justifyContent='space-between'
             alignItems='flex-start'
             width='100%'

@@ -11,6 +11,7 @@ const HeroTitle = ({ children, ...otherProps }: HeroTitleProps) => {
             fontSize={{ xs: 'largeTitle', sm: 'xLargeTitle', lg: 'xxxLargeTitle' }}
             fontFamily={'Open Sans'}
             fontWeight={700}
+            letterSpacing={-2}
             {...otherProps}
         >
             {children}

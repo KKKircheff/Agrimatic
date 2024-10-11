@@ -35,15 +35,14 @@ const HomeHero = () => {
                 justifyContent='center'
             >
                 <HeroTitle
-                    pt={{ xs: 0, md: 5, lg: 9, xl: 12 }}
                     pb={{ xs: 4, md: 5, lg: 5, xl: 6 }}
                     textAlign='center'
-                    maxWidth={1000}
-                >Сертифицирани семена за картофи от Нидерландия
+                    maxWidth={900}
+                >Сертифицирани <HeroTitle textColor={'primary.400'}>семена за картофи </HeroTitle>от Нидерландия
                 </HeroTitle>
                 <TextContent
                     textAlign='center'
-                    pb={{ xs: 2, md: 2, lg: 2 }}
+                    pb={{ xs: 1, md: 1, lg: 1 }}
                 >Лицензиран вносител на седем ранни, средно ранни и късни картофени семена
                 </TextContent>
                 <TextContent

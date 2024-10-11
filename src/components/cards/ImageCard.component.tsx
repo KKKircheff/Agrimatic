@@ -10,12 +10,9 @@ type Props = {
 const ImageCard = ({ aspect = 1, url, text }: Props) => {
     const theme = useTheme()
     return (
-        <Card sx={{ aspectRatio: aspect, width: '100%', borderColor: 'transparent' }}>
+        <Card sx={{ aspectRatio: aspect, width: '100%', borderColor: 'transparent', paddingX: { xs: 1, sm: 2 } }}>
             <CardCover>
-                <img
-                    src={url}
-                    alt=""
-                />
+                <img src={url} alt="Hero image of potato crops" />
             </CardCover>
             {/* {text ?
                 <CardCover
@@ -26,11 +23,12 @@ const ImageCard = ({ aspect = 1, url, text }: Props) => {
                 /> : <></>} */}
             {text
                 ? <CardContent sx={{
-                    justifyContent: 'flex-end',
+                    justifyContent: { xs: 'center', md: 'flex-end' },
+                    alignItems: { xs: 'center', md: 'flex-end' },
                 }}>
                     <Box
                         py={1}
-                        px={{ xs: 1.7, sm: 2 }}
+                        px={2}
                         borderRadius='xl'
                         sx={{ width: 'fit-content', backgroundColor: `rgba(${theme.vars.palette.primary.darkChannel} / 0.6)` }}
                     >

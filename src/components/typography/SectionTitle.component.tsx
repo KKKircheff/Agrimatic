@@ -10,7 +10,7 @@ const SectionTitle = ({ children, ...otherProps }: SectionTitleProps) => {
         <Typography
             fontSize={{ xs: 'largeTitle', sm: 'xLargeTitle', lg: 'xxLargeTitle' }}
             fontWeight={300}
-            lineHeight='3rem'
+            lineHeight={{ xs: '2.4rem', md: '3rem' }}
             {...otherProps}
         >
             {children}
