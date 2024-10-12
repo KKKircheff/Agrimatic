@@ -1,4 +1,4 @@
-import { Avatar, Box, Card, CardContent, Grid, Stack, Typography } from "@mui/joy"
+import { Card, CardContent, Grid, Stack } from "@mui/joy"
 import ImageCard from "./ImageCard.component"
 import CardTitle from "../typography/CardTitle.component"
 import CardTextContent from "../typography/CardTextContent.componet"
@@ -26,7 +26,9 @@ export const VarietyCard = ({ variety }: Props) => {
         >
             <Grid container direction={{ xs: 'column', md: 'row' }} spacing={3}>
                 <Grid xs={12} md={4} lg={3} xl={2.5} height='100%' >
-                    <ImageCard url={variety.skin === 'Жълта' ? '/images/potato_yellow.webp' : '/images/potato_red.webp'} aspect={1} />
+                    <ImageCard
+                        url={variety.skin === 'Жълта' ? '/images/potato_yellow.webp' : variety.skin === 'Светло жълта' ? '/images/potato_light_yellow.webp' : '/images/potato_red.webp'}
+                        aspect={1} />
                 </Grid>
 
                 <Grid xs={12} md={8} lg={9} xl={9.5} minHeight='100%' gap={2}>
@@ -50,7 +52,7 @@ export const VarietyCard = ({ variety }: Props) => {
                                 <CardTextContent textColor='primary.500'>Размер: <CardTextContent>{variety.size}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Кора: <CardTextContent>{variety.skin}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Сърцевина: <CardTextContent>{variety.flesh}</CardTextContent></CardTextContent>
-                                <CardTextContent textColor='primary.500'>Био сертификат: <CardTextContent>{variety.organic ? 'Да' : 'Не'}</CardTextContent></CardTextContent>
+                                <CardTextContent textColor='primary.500'>Био-органик: <CardTextContent>{variety.organic ? 'Да' : 'Не'}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Лиценз: <CardTextContent>{variety.licensed ? 'Да' : 'Не'}</CardTextContent></CardTextContent>
                             </Stack>
                             <Stack direction='column' alignSelf='flex-end'>

@@ -6,20 +6,23 @@ import AOS from 'aos'
 import Box from "@mui/joy/Box";
 import Layout from './Layout/Layout.component';
 import PageLoaderSkeleton from './components/pageLoaderSkeleton/PageLoaderSkeleton.component';
-import Varieties from './routes/Varieties/Varieties.page';
-import Home from './routes/Home/Home.page';
-// const Varieties = lazy(() => import('./routes/Pricing/Pricing'));
+
+const Home = lazy(() => import('./routes/Home/Home.page'));
+const Varieties = lazy(() => import('./routes/Varieties/Varieties.page'));
 const Contact = lazy(() => import('./routes/Contact/Contact.page'));
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={
+            <Suspense fallback={<PageLoaderSkeleton />}>
+                <Home />
+            </Suspense>
+        } />
         <Route path={`/varieties`} element={
             <Suspense fallback={<PageLoaderSkeleton />}>
                 <Varieties />
             </Suspense>
         } />
-
         <Route path={`/contact`} element={
             <Suspense fallback={<PageLoaderSkeleton />}>
                 <Contact />

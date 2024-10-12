@@ -4,7 +4,7 @@ import { varieties } from "../../routes/Varieties/varaties"
 
 export const VarietiesCards = () => {
     return (
-        <Stack spacing={2}>
+        <Stack spacing={4}>
             {varieties.map((variety, index) => (
                 <VarietyCard key={variety.name + index} variety={variety} />
             ))

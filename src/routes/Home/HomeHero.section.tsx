@@ -28,17 +28,25 @@ const HomeHero = () => {
     const screenWidth = useScreenWidth();
 
     return (
-        <Stack direction={'column'} gap={{ xs: 6, md: 8, lg: 10, xl: 12 }}>
+        <Stack
+            direction={'column'}
+            gap={{ xs: 6, md: 0 }}
+        >
             <Stack
                 direction='column'
                 alignItems='center'
                 justifyContent='center'
+                bgcolor='neutral.100'
+                borderRadius='md'
+                px={4}
+                pt={{ xs: 4, md: 8, lg: 10 }}
+                pb={{ xs: 6, md: 24, lg: 34 }}
             >
                 <HeroTitle
                     pb={{ xs: 4, md: 5, lg: 5, xl: 6 }}
                     textAlign='center'
                     maxWidth={900}
-                >Сертифицирани <HeroTitle textColor={'primary.400'}>семена за картофи </HeroTitle>от Нидерландия
+                >СЕРТИФИЦИРАНИ <HeroTitle textColor={'primary.400'}>СЕМЕНА ЗА КАРТОФИ </HeroTitle>ОТ НИДЕРЛАНДИЯ
                 </HeroTitle>
                 <TextContent
                     textAlign='center'
@@ -47,34 +55,40 @@ const HomeHero = () => {
                 </TextContent>
                 <TextContent
                     textAlign='center'
-                    pb={{ xs: 4, md: 6, lg: 8 }}
+                    pb={{ xs: 6, md: 7, lg: 8 }}
                 >Вносител на висококачествени картофени семена със свободен лиценз
                 </TextContent>
-                <Stack direction='row' gap={2}>
+                <Stack direction='row' gap={{ xs: 1, sm: 2 }}>
                     <BlackButton
                         size='lg'
                         color='neutral'
                         onClick={scrollToCatalogues}
-                        endDecorator={<ArrowOutwardIcon />}>
+                        endDecorator={<ArrowOutwardIcon sx={{ marginLeft: '-5px' }} />}>
                         <Typography textColor='inherit' fontSize='inherit'>Семена</Typography>
                     </BlackButton>
                     <BlackButton
                         size='lg'
                         onClick={scrollToContact}
-                        endDecorator={<ArrowOutwardIcon />}>
-                        <Typography textColor='inherit' fontSize='inherit'>Контакт</Typography>
+                        endDecorator={<ArrowOutwardIcon sx={{ marginLeft: '-5px' }} />}>
+                        <Typography textColor='inherit' fontSize='inherit'>Информация</Typography>
                     </BlackButton>
                 </Stack>
             </Stack>
-            <Grid container spacing={{ xs: 2, md: 2 }}>
-                <Grid xs={12} md={7}>
-                    <ImageCard url='/images/hero-image-1.webp' aspect={1.5} />
+
+            <Grid
+                container spacing={{ xs: 0, md: 3, lg: 4, xl: 6 }}
+                mt={{ xs: 0, md: -18, lg: -26 }}
+                width={{ xs: '100%', md: '96%' }}
+                mx='auto'
+            >
+                <Grid xs={12} md={4} alignSelf='flex-end'>
+                    {screenWidth >= 900 && <ImageCard url='/images/hero-image-2.webp' aspect={1.2} />}
                 </Grid>
-                <Grid xs={12} md={5}>
-                    <Stack spacing={2} direction={screenWidth < 900 ? 'column-reverse' : 'column'}>
-                        <ImageCard url='/images/hero-image-2.webp' aspect={1.5} />
-                        <ImageCard url='/images/gadget-green-1.webp' aspect={screenWidth >= 900 ? 4 : 2.5} text='Получавате качеството, което поръчате!' />
-                    </Stack>
+                <Grid xs={12} md={4} alignSelf='flex-end'>
+                    <ImageCard url='/images/hero-image-1.webp' aspect={1.2} />
+                </Grid>
+                <Grid xs={12} md={4} alignSelf='flex-end'>
+                    {screenWidth >= 900 && <ImageCard url='/images/potatoes-crate.webp' aspect={1.2} />}
                 </Grid>
             </Grid>
             {/* <ImageWithMask width={'100%'} imgSrc={'/images/hero.webp'} maskSrc={'/images/home-hero-mask.png'} alt={'SVG image'} aspectRatio={1280 / 850} /> */}
