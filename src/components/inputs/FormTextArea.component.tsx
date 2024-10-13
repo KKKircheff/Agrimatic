@@ -53,7 +53,7 @@ const FormTextArea = ({ label, name, control, required = false, ...otherProps }:
                                 setIsFocused(false)
                                 onChange(event.target.value)
                             }}
-                            sx={{ borderRadius: 5, color: c.neutral[500], borderColor: 'neutral.300', fontSize: { xs: 'sm', md: 'md' } }}
+                            sx={{ borderRadius: 5, color: c.neutral[500], borderColor: 'neutral.300', fontSize: { xs: 'md', md: 'md' } }}
                             {...otherProps}
                         />
                         {errors && <FormHelperText sx={{ color: c.danger[500] }}> {error && error.message}</FormHelperText>}

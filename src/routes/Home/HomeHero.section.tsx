@@ -50,13 +50,9 @@ const HomeHero = () => {
                 </HeroTitle>
                 <TextContent
                     textAlign='center'
-                    pb={{ xs: 1, md: 1, lg: 1 }}
-                >Лицензиран вносител на седем ранни, средно ранни и късни картофени семена
-                </TextContent>
-                <TextContent
-                    textAlign='center'
+                    maxWidth={550}
                     pb={{ xs: 6, md: 7, lg: 8 }}
-                >Вносител на висококачествени картофени семена със свободен лиценз
+                >Директен вносител на широка гама висококачествени ранни, средно ранни и късни картофени семена, както със свободен така и с изключителен лизенз
                 </TextContent>
                 <Stack direction='row' gap={{ xs: 1, sm: 2 }}>
                     <BlackButton

@@ -6,7 +6,7 @@ import { VarietiesCards } from "./VarietiesCards.sections"
 const Varieties = () => {
     return (
         <>
-            <SectionWrapper pt={{ xs: 5, lg: 5, xl: 5 }}>
+            <SectionWrapper pt={{ xs: 0, lg: 5, xl: 5 }}>
                 <VaraietiesHero />
                 <SideTitleText
                     title='Налични сортове - спецификации и описание'
@@ -14,7 +14,7 @@ const Varieties = () => {
                     pt={{ xs: 5, md: 12, xl: 14 }} pb={{ xs: 8, md: 12, xl: 14 }}
                 />
             </SectionWrapper>
-            <SectionWrapper pb={{ xs: 5, lg: 5, xl: 5 }}>
+            <SectionWrapper pb={{ xs: 2, lg: 5, xl: 5 }}>
                 <VarietiesCards />
             </SectionWrapper>
         </>

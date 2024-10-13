@@ -38,7 +38,7 @@ const classes = [
 
 export const HomeClassInfo = ({ ...otherProps }: Props) => {
     return (
-        <Stack direction="column" gap={10} alignItems='stretch'>
+        <Stack direction="column" gap={{ xs: 6, md: 10 }} alignItems='stretch'>
             <SideTitleText title="Класове картофи за разсад" textContent="Етикирането и сертифицирането гарантират, че картофите за разсад от Нидерландия отговарят на най-високите стандарти за качество и безопасност, както на национално, така и на европейско ниво " />
             <Grid
                 container

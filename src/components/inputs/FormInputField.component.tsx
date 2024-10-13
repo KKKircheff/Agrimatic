@@ -57,7 +57,7 @@ const FormInputField = ({ label, name, control, required = false, ...otherProps 
                                 borderRadius: 5,
                                 borderWidth: 1.3,
                                 fontWeight: 400,
-                                fontSize: 'sm',
+                                fontSize: 'md',
                                 color: c.neutral[500],
                                 borderColor: c.neutral[300]
                             }}

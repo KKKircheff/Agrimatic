@@ -34,8 +34,14 @@ export const FaqAccordion = ({ faqs }: Props) => {
 
                 [`& .${accordionSummaryClasses.button}`]: {
                     borderRadius: 'xs',
+                    bgcolor: theme.palette.neutral[100],
+                    color: theme.palette.primary[500]!,
+                    px: 2
+                },
+                [`& .${accordionSummaryClasses.button}.${accordionClasses.expanded}`]: {
+                    borderRadius: 'xs',
                     bgcolor: theme.palette.neutral[700],
-                    color: theme.palette.primary[400]!,
+                    color: theme.palette.primary[500]!,
                     px: 2
                 },
 
@@ -43,7 +49,7 @@ export const FaqAccordion = ({ faqs }: Props) => {
                     marginTop: 1,
                     transition: '0.2s ease',
                     '& button:hover': {
-                        bgcolor: theme.palette.neutral[900],
+                        bgcolor: theme.palette.neutral[700],
                         color: theme.palette.primary[400],
                     },
                 },

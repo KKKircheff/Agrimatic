@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
         <Stack>
-            <SectionWrapper pt={{ xs: 5, lg: 5, xl: 5 }}>
+            <SectionWrapper pt={{ xs: 0, lg: 5, xl: 5 }}>
                 <HomeHero />
                 <SideTitleText
                     title='Защо да изберете Агриматик за партньор?'
@@ -21,7 +21,7 @@ const Home = () => {
                 />
                 <HomeCards pt={{ xs: 6, lg: 12 }} pb={8} />
             </SectionWrapper>
-            <SectionWrapper id='contact-form' pb={8} pt={{ xs: 0, md: 8 }}>
+            <SectionWrapper id='contact-form' pb={{ xs: 5, md: 8 }} pt={{ xs: 0, md: 8 }}>
                 <HomeClassInfo />
             </SectionWrapper>
             <SectionWrapper pb={8} pt={{ xs: 0, md: 8 }}>

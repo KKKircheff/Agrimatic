@@ -6,7 +6,7 @@ import { Stack } from "@mui/joy"
 const Contact = () => {
     return (
         <Stack direction='column'>
-            <SectionWrapper pt={5}>
+            <SectionWrapper pt={{ xs: 0, lg: 5, xl: 5 }}>
                 <ContactHero />
             </SectionWrapper>
             <SectionWrapper pt={8} pb={4}>
