@@ -27,43 +27,44 @@ export const FaqAccordion = ({ faqs }: Props) => {
     return (
         <AccordionGroup
             disableDivider
+            variant='plain'
             transition="0.2s ease"
             sx={(theme) => ({
                 width: '100%',
+
+                [`& .${accordionSummaryClasses.button}`]: {
+                    borderRadius: 'xs',
+                    bgcolor: theme.palette.neutral[700],
+                    color: theme.palette.primary[400]!,
+                    px: 2
+                },
+
                 [`& .${accordionClasses.root}`]: {
                     marginTop: 1,
                     transition: '0.2s ease',
-                    bgcolor: 'primary.50',
-                    borderRadius: 'xs',
-                    '& button:not([aria-expanded="true"])': {
-                        transition: '0.2s ease',
-                    },
                     '& button:hover': {
-                        borderRadius: 'xs',
-                        background: theme.palette.primary[100],
+                        bgcolor: theme.palette.neutral[900],
+                        color: theme.palette.primary[400],
                     },
                 },
                 [`& .${accordionClasses.root}.${accordionClasses.expanded}`]: {
-                    bgcolor: 'primary.50',
                     borderRadius: 'xs',
-                },
-                '& [aria-expanded="true"]': {
-                    boxShadow: `inset 0 -1px 0 ${theme.vars.palette.primary}`,
+                    bgcolor: 'neutral.100',
                 },
                 [`& .${accordionSummaryClasses.root}`]:
                 {
-                    fontSize: theme.typography['h3'],
-                    color: theme.palette.neutral[600],
-                    fontWeight: 300,
+                    fontWeight: 400,
+                    fontSize: 'lg',
                 },
                 [`& .${accordionSummaryClasses.root}.${accordionSummaryClasses.expanded}`]:
                 {
-                    fontWeight: 300,
-                    color: theme.palette.neutral[600],
+                    color: theme.palette.primary[600]!,
+                    fontWeight: 400,
                 },
                 [`& .${accordionDetailsClasses.content}.${accordionDetailsClasses.expanded}`]:
                 {
-                    color: theme.palette.neutral[600],
+                    pt: 2,
+                    color: theme.palette.neutral[500],
                 },
                 [`& .${accordionSummaryClasses.indicator}`]: {
                     transition: '0.2s',
