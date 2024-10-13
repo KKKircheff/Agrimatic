@@ -14,7 +14,7 @@ const ContactHero = () => {
             bgcolor='neutral.100'
             borderRadius='md'
             p={1}
-            pt={{ xs: 3, md: 1 }}
+            pt={{ xs: 0, md: 1 }}
         >
             <Grid xs={12} md={5} minHeight='100%' >
                 <Stack spacing={{ xs: 2, sm: 4, }} height='100%' justifyContent='space-between'>

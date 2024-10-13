@@ -37,7 +37,7 @@ export const theme = extendTheme({
     fontSize: {
         xSmallTitle: '0.9rem',
         smallTitle: '1.2rem',
-        mediumTitle: '1.4rem',
+        mediumTitle: '1.8rem',
         largeTitle: '2rem',
         xLargeTitle: '2.3rem',
         xxLargeTitle: '2.7rem',

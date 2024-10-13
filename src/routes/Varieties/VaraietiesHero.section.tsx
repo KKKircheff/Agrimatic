@@ -15,15 +15,15 @@ export const VaraietiesHero = () => {
                 justifyContent='center'
                 bgcolor='neutral.100'
                 borderRadius='md'
-                px={4}
+                px={2}
                 pt={{ xs: 4, md: 8, xl: 10 }}
-                pb={{ xs: 6, md: 18, lg: 20, xl: 30 }}
+                pb={{ xs: 2, md: 18, lg: 20, xl: 30 }}
             >
                 <HeroTitle
                     pb={{ xs: 4, md: 5, lg: 5, xl: 6 }}
                     textAlign='center'
                     maxWidth={{ xs: 700, lg: 850 }}
-                >ШИРОКА ГАМА <HeroTitle textColor={'primary.400'}>СОРТОВЕ ЗА РАЗСАД  </HeroTitle>ОТ АГРИМАТИК
+                >ШИРОКА ГАМА <HeroTitle textColor={'primary.400'}>КАРТОФЕНИ СЕМЕНА  </HeroTitle>ОТ АГРИМАТИК
                 </HeroTitle>
                 <TextContent pb={{ xs: 1, md: 1, lg: 1 }} maxWidth={{ xs: '100%', md: '44%' }}
                 >Ранни, средно ранни и късни картофени семена. Разгледайте нашата гама и не се колебайте за контакт с нас. Ние от Агриматик сме винаги готови да съдействаме със съвет или информация.

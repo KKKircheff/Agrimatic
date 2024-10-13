@@ -38,9 +38,9 @@ const HomeHero = () => {
                 justifyContent='center'
                 bgcolor='neutral.100'
                 borderRadius='md'
-                px={4}
+                px={2}
                 pt={{ xs: 4, md: 8, lg: 10 }}
-                pb={{ xs: 6, md: 24, lg: 34 }}
+                pb={{ xs: 2, md: 24, lg: 34 }}
             >
                 <HeroTitle
                     pb={{ xs: 4, md: 5, lg: 5, xl: 6 }}
