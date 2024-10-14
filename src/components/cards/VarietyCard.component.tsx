@@ -18,8 +18,8 @@ export const VarietyCard = ({ variety }: Props) => {
                 display: "flex", // Enable flexbox on the card
                 flexDirection: "column", // Stack elements vertically
                 justifyContent: "space-between", // Distribute space evenly
-                backgroundColor: "primary.50",
-                borderColor: "primary.100",
+                backgroundColor: "primary.100",
+                borderColor: "primary.200",
                 padding: 1.5,
                 borderRadius: 'md'
             }}

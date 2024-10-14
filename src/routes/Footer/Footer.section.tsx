@@ -18,10 +18,9 @@ const groupRow: TypographyStyle = {
 
 const Footer = () => {
     return (
-        // <Stack direction='column' bgcolor='primary.50' minHeight='200px' mx='auto' my={2} width={{ xs: '90%', md: '96%', xl: '97%' }} borderRadius='md'>
         <SectionWrapper
             direction={{ xs: 'column', md: 'row' }}
-            bgcolor='primary.50'
+            bgcolor='primary.100'
             justifyContent='space-between'
             spacing={4}
             borderRadius='md'
@@ -46,7 +45,7 @@ const Footer = () => {
                     ml={{ xs: 0, md: -4 }}
                     justifyContent={{ xs: 'left', md: 'flex-start' }}
                     startDecorator={<PlaceOutlinedIcon sx={{ color: 'primary.500' }} />}
-                >1138 Младост 4</Typography>
+                >1138, Младост 4</Typography>
                 <Typography
                     style={groupRow}
                     justifyContent={{ xs: 'left', md: 'flex-start' }}
@@ -59,7 +58,7 @@ const Footer = () => {
 
                     justifyContent={{ xs: 'left', md: 'flex-start' }}
                     startDecorator={<PlaceOutlinedIcon sx={{ color: 'primary.500' }} />}
-                > 7513EG, Haaksbergerstraat 294a</Typography>
+                > 7513EG, Haaksbergerstraat</Typography>
                 <Typography
                     style={groupRow}
                     justifyContent={{ xs: 'left', md: 'flex-start' }}
@@ -80,7 +79,7 @@ const Footer = () => {
                     style={groupRow}
                     justifyContent={{ xs: 'left', md: 'flex-end' }}
                     startDecorator={<LocalPhoneOutlinedIcon sx={{ color: 'primary.500' }} />}
-                >+359 555 555 555</Typography>
+                >+359 876 962 484</Typography>
             </Stack>
         </SectionWrapper>
         // </Stack>

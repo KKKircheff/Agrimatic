@@ -66,9 +66,11 @@ export const theme = extendTheme({
         light: {
             palette: {
                 primary: {
-                    '50': '#f5faee',
-                    '100': '#e9f3db',
-                    '200': '#d2e7b7',
+                    // '50': '#f5faee',
+                    // '100': '#e9f3db',
+                    '50': '#f7fbf2',
+                    '100': '#f5faee',
+                    '200': '#eff7e5',
                     '300': '#bbdb93',
                     '400': '#a4cf70',
                     '500': '#8BC34A',
