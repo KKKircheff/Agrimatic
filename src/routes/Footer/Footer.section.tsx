@@ -5,6 +5,8 @@ import LocalPostOfficeOutlinedIcon from '@mui/icons-material/LocalPostOfficeOutl
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import { TypographyStyle } from '@mui/material';
 import Logo from '../../components/navbar/Logo.section';
+import { Link } from 'react-router-dom';
+import { isMobile } from 'react-device-detect'
 
 const groupTitle: TypographyStyle = {
     fontWeight: 500,
@@ -13,6 +15,7 @@ const groupTitle: TypographyStyle = {
 
 const groupRow: TypographyStyle = {
     fontWeight: 300,
+    textDecoration: 'none'
 }
 
 
@@ -47,13 +50,13 @@ const Footer = () => {
                     startDecorator={<PlaceOutlinedIcon sx={{ color: 'primary.500' }} />}
                 >1138, Младост 4</Typography>
                 <Typography
-                    style={groupRow}
+                    sx={groupRow}
                     justifyContent={{ xs: 'left', md: 'flex-start' }}
                     pl={{ xs: 4, md: 0 }}
                     pb={2}
                 >София, България</Typography>
                 <Typography
-                    style={groupRow}
+                    sx={groupRow}
                     ml={{ xs: 0, md: -4 }}
 
                     justifyContent={{ xs: 'left', md: 'flex-start' }}
@@ -70,16 +73,24 @@ const Footer = () => {
                     sx={groupTitle}
                 >КОНТАКТ</Typography>
                 <Typography
-                    style={groupRow}
+                    sx={groupRow}
                     pb={2}
                     startDecorator={<LocalPostOfficeOutlinedIcon sx={{ color: 'primary.500' }} />}
                     justifyContent={{ xs: 'left', md: 'flex-end' }}
                 >office@agrimatic.bg</Typography>
-                <Typography
-                    style={groupRow}
-                    justifyContent={{ xs: 'left', md: 'flex-end' }}
-                    startDecorator={<LocalPhoneOutlinedIcon sx={{ color: 'primary.500' }} />}
-                >+359 876 962 484</Typography>
+                {isMobile ? <Link to='tel:+359876962484' style={{ textDecoration: 'none' }}>
+                    <Typography
+                        sx={groupRow}
+                        justifyContent={{ xs: 'left', md: 'flex-end' }}
+                        startDecorator={<LocalPhoneOutlinedIcon sx={{ color: 'primary.500' }} />}
+                    >+359 876 962 484</Typography>
+                </Link>
+                    : <Typography
+                        sx={groupRow}
+                        justifyContent={{ xs: 'left', md: 'flex-end' }}
+                        startDecorator={<LocalPhoneOutlinedIcon sx={{ color: 'primary.500' }} />}
+                    >+359 876 962 484</Typography>
+                }
             </Stack>
         </SectionWrapper>
         // </Stack>

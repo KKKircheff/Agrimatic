@@ -6,17 +6,11 @@ import TextContent from '../../components/typography/TextContent.component';
 import HeroTitle from '../../components/typography/HeroTitle.component';
 import ImageCard from '../../components/cards/ImageCard.component';
 import useScreenWidth from "../../hooks/useScreenWidth";
+import { useNavigate } from "react-router-dom";
 // import ImageWithMask from '../../components/ImageWithMask';
 
-const scrollToCatalogues = () => {
-    scroller.scrollTo('catalogues', {
-        duration: 800,
-        delay: 0,
-        smooth: 'easeInOutQuint',
-    });
-}
 const scrollToContact = () => {
-    scroller.scrollTo('contact-form', {
+    scroller.scrollTo('information_section', {
         duration: 800,
         delay: 0,
         smooth: 'easeInOutQuint',
@@ -24,8 +18,8 @@ const scrollToContact = () => {
 }
 
 const HomeHero = () => {
-    // const r = useTheme().radius;
     const screenWidth = useScreenWidth();
+    const navigate = useNavigate();
 
     return (
         <Stack
@@ -58,7 +52,7 @@ const HomeHero = () => {
                     <BlackButton
                         size='lg'
                         color='neutral'
-                        onClick={scrollToCatalogues}
+                        onClick={() => navigate('/varieties')}
                         endDecorator={<ArrowOutwardIcon sx={{ marginLeft: '-5px' }} />}>
                         <Typography textColor='inherit' fontSize='inherit'>Семена</Typography>
                     </BlackButton>

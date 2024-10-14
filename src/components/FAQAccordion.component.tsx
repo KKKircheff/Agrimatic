@@ -7,8 +7,10 @@ import {
     AccordionSummary,
     accordionSummaryClasses,
     Grid
-} from '@mui/joy'
-import { useState } from 'react'
+} from '@mui/joy';
+
+import { useState } from 'react';
+import { isMobile } from "react-device-detect";
 
 type Props = {
     faqs: {
@@ -18,15 +20,33 @@ type Props = {
 }
 
 export const FaqAccordion = ({ faqs }: Props) => {
-    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+    // For mobile, we'll use an array to track multiple open accordions.
+    const [expandedIndices, setExpandedIndices] = useState<number[]>([]);
+    // For desktop, we'll track a single expanded index.
+    const [expandedDesktopIndex, setExpandedDesktopIndex] = useState<number | null>(null);
 
     const handleChange = (index: number) => {
-        setExpandedIndex(expandedIndex === index ? null : index);
+        if (isMobile) {
+            // On mobile, we allow multiple accordions to be expanded, toggling them individually.
+            setExpandedIndices(prevExpandedIndices =>
+                prevExpandedIndices.includes(index)
+                    ? prevExpandedIndices.filter(i => i !== index) // Close accordion if already open
+                    : [...prevExpandedIndices, index] // Open accordion
+            );
+        } else {
+            // On desktop, only one accordion can be expanded at a time.
+            setExpandedDesktopIndex(index);
+        }
+    };
+
+    const isExpanded = (index: number) => {
+        return isMobile
+            ? expandedIndices.includes(index) // For mobile, check if this index is in the array
+            : expandedDesktopIndex === index; // For desktop, check if this is the expanded index
     };
 
     return (
         <AccordionGroup
-            // disableDivider
             variant='plain'
             transition="0.2s ease"
             sx={(theme) => ({
@@ -35,16 +55,15 @@ export const FaqAccordion = ({ faqs }: Props) => {
                     color: theme.palette.neutral[500]!,
                     bgcolor: theme.palette.primary[50],
                     px: 3,
-
+                    minHeight: 60
                 },
-
                 [`& .${accordionSummaryClasses.button}.${accordionClasses.expanded}`]: {
                     bgcolor: theme.palette.primary[400],
                     color: theme.palette.neutral[700]!,
                     px: 3,
-                    mb: 2
+                    mb: 2,
+                    minHeight: 60
                 },
-
                 [`& .${accordionClasses.root}`]: {
                     marginTop: 1.5,
                     transition: '0.2s ease',
@@ -55,20 +74,17 @@ export const FaqAccordion = ({ faqs }: Props) => {
                 },
                 [`& .${accordionClasses.root}.${accordionClasses.expanded}`]: {
                     bgcolor: 'primary.50',
-                    mb: 2
+                    mb: 2,
                 },
-                [`& .${accordionSummaryClasses.root}`]:
-                {
+                [`& .${accordionSummaryClasses.root}`]: {
                     fontWeight: 400,
                     fontSize: 'md',
                 },
-                [`& .${accordionSummaryClasses.root}.${accordionSummaryClasses.expanded}`]:
-                {
+                [`& .${accordionSummaryClasses.root}.${accordionSummaryClasses.expanded}`]: {
                     color: theme.palette.primary[600]!,
                     fontWeight: 400,
                 },
-                [`& .${accordionDetailsClasses.content}.${accordionDetailsClasses.expanded}`]:
-                {
+                [`& .${accordionDetailsClasses.content}.${accordionDetailsClasses.expanded}`]: {
                     pt: 0,
                     px: 3,
                     color: theme.palette.neutral[500],
@@ -83,20 +99,22 @@ export const FaqAccordion = ({ faqs }: Props) => {
             })}
         >
             <Grid container columnSpacing={{ xs: 2, md: 4 }}>
-                {
-                    faqs.map((faq, index) =>
-                        <Grid xs={12} md={6} key={index}>
-                            <Accordion expanded={expandedIndex === index} onChange={() => handleChange(index)}>
-                                <AccordionSummary>{faq.title}</AccordionSummary>
-                                {faq.content.map((content, index) =>
-                                    <AccordionDetails key={5000 + index}>
-                                        {content}
-                                    </AccordionDetails>)}
-                            </Accordion>
-                        </Grid>
-                    )
-                }
+                {faqs.map((faq, index) => (
+                    <Grid xs={12} md={6} key={index}>
+                        <Accordion
+                            expanded={isExpanded(index)} // Check expanded state for mobile/desktop
+                            onChange={() => handleChange(index)}
+                        >
+                            <AccordionSummary>{faq.title}</AccordionSummary>
+                            {faq.content.map((content, contentIndex) => (
+                                <AccordionDetails key={5000 + contentIndex}>
+                                    {content}
+                                </AccordionDetails>
+                            ))}
+                        </Accordion>
+                    </Grid>
+                ))}
             </Grid>
-        </AccordionGroup >
-    )
-}
+        </AccordionGroup>
+    );
+};

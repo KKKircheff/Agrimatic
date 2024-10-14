@@ -53,7 +53,6 @@ const ContactForm = () => {
         reset()
     }
 
-
     const contactTemplate = (formValues: ContactInfo, created: Date, time_stamp: number) => {
         return ({
             to: ["text@test.com"],
@@ -85,7 +84,6 @@ const ContactForm = () => {
     }
 
     const submit = async (data: ContactInfo) => {
-        return
         try {
             setIsFormValid(true);
             const { name, email, message, phonenumber } = data;

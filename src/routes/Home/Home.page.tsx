@@ -19,9 +19,9 @@ const Home = () => {
                     textContent='Ние доставяме директно до вас висококачествени семена и посадъчен материал за картофи от нидерландски производители. Изключителни представители сме на седем лицензирани сорта картофи за България. Освен това доставяме сортове със свободен лиценз, като Агрия, Билдстар, Дезире и други.'
                     mt={{ xs: 5, lg: 16 }}
                 />
-                <HomeCards pt={{ xs: 6, lg: 12 }} pb={8} />
+                <HomeCards pt={{ xs: 6, lg: 12 }} />
             </SectionWrapper>
-            <SectionWrapper id='contact-form' pb={{ xs: 5, md: 8 }} pt={{ xs: 0, md: 8 }}>
+            <SectionWrapper id='information_section' pb={{ xs: 5, md: 8 }} pt={{ xs: 8.5, md: 16 }}>
                 <HomeClassInfo />
             </SectionWrapper>
             <SectionWrapper pb={8} pt={{ xs: 0, md: 8 }}>
