@@ -10,6 +10,7 @@ const TextContent = ({ children, ...otherProps }: TextContentProps) => {
         <Typography
             fontWeight={400}
             textColor="neutral.600"
+            fontSize={{ xs: 'lg', md: 'md' }}
             {...otherProps}
         >
             {children}

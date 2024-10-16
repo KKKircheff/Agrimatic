@@ -35,6 +35,7 @@ const FormInputField = ({ label, name, control, required = false, ...otherProps 
                                 top: (value || isFocused) ? -12 : 12,
                                 color: c.neutral[500],
                                 fontWeight: 400,
+                                fontSize: { xs: 'md', md: 'sm' },
                                 backgroundColor: c.neutral[50],
                                 marginLeft: 2,
                                 padding: '0 8px',
@@ -57,7 +58,7 @@ const FormInputField = ({ label, name, control, required = false, ...otherProps 
                                 borderRadius: 5,
                                 borderWidth: 1.3,
                                 fontWeight: 400,
-                                fontSize: 'md',
+                                fontSize: { xs: 'lg', md: 'md' },
                                 color: c.neutral[500],
                                 borderColor: c.neutral[300]
                             }}

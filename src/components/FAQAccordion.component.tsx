@@ -56,7 +56,8 @@ export const FaqAccordion = ({ faqs }: Props) => {
                     color: theme.palette.neutral[500]!,
                     bgcolor: theme.palette.primary[50],
                     px: 3,
-                    minHeight: 60
+                    minHeight: 60,
+                    fontSize: { xs: 'lg', md: 'md' },
                 },
                 [`& .${accordionSummaryClasses.button}.${accordionClasses.expanded}`]: {
                     bgcolor: theme.palette.primary[400],
@@ -89,6 +90,7 @@ export const FaqAccordion = ({ faqs }: Props) => {
                     pt: 0,
                     px: 3,
                     color: theme.palette.neutral[500],
+                    fontSize: { xs: 'lg', md: 'md' },
                 },
                 [`& .${accordionSummaryClasses.indicator}`]: {
                     transition: '0.2s',
