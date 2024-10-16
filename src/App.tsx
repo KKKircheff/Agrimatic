@@ -3,6 +3,7 @@ import { Route, createBrowserRouter, RouterProvider, createRoutesFromElements } 
 
 import './App.scss';
 import AOS from 'aos'
+import "aos/dist/aos.css";
 import Box from "@mui/joy/Box";
 import Layout from './Layout/Layout.component';
 import PageLoaderSkeleton from './components/pageLoaderSkeleton/PageLoaderSkeleton.component';
@@ -37,9 +38,12 @@ function App() {
 
     useEffect(() => {
         /* ! important how to init AOS in Vite */
+        /* Also important following line in the import section - import  "aos/dist/aos.css"; */
+        console.log('in here')
         AOS.init({
             easing: 'ease-in',
-            delay: 50,
+            // easing: 'ease-in-sine',
+            delay: 0,
             duration: 300,
             offset: 50,
             anchorPlacement: 'bottom-center',

@@ -46,6 +46,7 @@ const ContactForm = () => {
 
     const [isFormValid, setIsFormValid] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false)
 
     const { control, reset, handleSubmit } = useForm<ContactInfo>();
 
@@ -55,18 +56,17 @@ const ContactForm = () => {
 
     const contactTemplate = (formValues: ContactInfo, created: Date, time_stamp: number) => {
         return ({
-            to: ["text@test.com"],
+            to: ["kircheff@protonmail.com", "georgiev.gancho@gmail.com"],
             message: {
-                subject: "New contact request reddigit.net",
+                subject: "Запитване Agrimatic.bg",
                 text: "Some text that maybe is needed",
                 html:
                     `<code>
                   <body>
-                  <p>NEW CONTACT REQUEST</p>
-                  <p>on AGRO-MACHINES.NL</p>
+                  <p>CONTACT REQUEST AGRIMATIC</p>
                   <p>Created: ${created}</p>
                   <p>Name: ${formValues.name}</p>
-                  <p>Company: ${formValues.company}</p>
+                  <p>Company: ${formValues.company} </p>
                   <p>Phone number: ${formValues.phonenumber}</p>
                   <p>email: ${formValues.email}</p>
                   <p>message: ${formValues.message}</p>
@@ -84,6 +84,7 @@ const ContactForm = () => {
     }
 
     const submit = async (data: ContactInfo) => {
+        setIsLoading(true);
         try {
             setIsFormValid(true);
             const { name, email, message, phonenumber } = data;
@@ -107,26 +108,21 @@ const ContactForm = () => {
             const { db } = await import("../../utils/firebase-utils");
             const created = new Date();
             const time_stamp = created.getTime();
-            const emailRef = collection(db, 'Contact_messages');
+            const emailRef = collection(db, 'mail');
             await addDoc(emailRef, contactTemplate(data, created, time_stamp)).then(onSnapshot(emailRef, snapshot => {
                 return snapshot.docs.map(email => email.data());
             }))
+            setIsLoading(false);
             alert("Thank you for the contact. We will contact you as soon as possible.");
             clearFormFields();
         } catch (error) {
+            setIsLoading(false);
             alert(`Error: ${error}`);
         }
     }
 
     return (
-        <Stack
-            spacing={5}
-            py={3}
-            data-aos="fade-right"
-            data-aos-easing="ease-in"
-            data-aos-duration="250"
-            data-aos-delay="250">
-
+        <Stack spacing={5} py={3}>
             <form onSubmit={handleSubmit(submit)} noValidate>
                 <Grid container spacing={4} mb={3}>
                     <Grid xs={12} md={6}>
@@ -181,6 +177,8 @@ const ContactForm = () => {
                 {!isFormValid && <Typography textColor='danger.500' pb={3} mt={-5}>Невалидна форма {errorMessage}</Typography>}
                 <WhiteButton
                     type="submit"
+                    disabled={isLoading}
+                    loading={isLoading}
                     sx={{ maxWidth: 200 }}
                 >Изпрати</WhiteButton>
             </form>

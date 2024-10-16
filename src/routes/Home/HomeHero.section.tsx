@@ -7,6 +7,7 @@ import HeroTitle from '../../components/typography/HeroTitle.component';
 import ImageCard from '../../components/cards/ImageCard.component';
 import useScreenWidth from "../../hooks/useScreenWidth";
 import { useNavigate } from "react-router-dom";
+import { Fade, Zoom } from "react-awesome-reveal";
 // import ImageWithMask from '../../components/ImageWithMask';
 
 const scrollToContact = () => {
@@ -72,13 +73,27 @@ const HomeHero = () => {
                 mx='auto'
             >
                 <Grid xs={12} md={4} alignSelf='flex-end'>
-                    {screenWidth >= 900 && <ImageCard url='/images/hero-image-2.webp' aspect={1.2} />}
+                    {screenWidth >= 900 && <Zoom delay={0} duration={400} triggerOnce>
+                        <Fade delay={100} duration={600} triggerOnce>
+                            <ImageCard url='/images/hero-image-2.webp' aspect={1.2} />
+                        </Fade>
+                    </Zoom>}
                 </Grid>
                 <Grid xs={12} md={4} alignSelf='flex-end'>
-                    <ImageCard url='/images/hero-image-1.webp' aspect={1.2} />
+                    {screenWidth >= 900
+                        ? <Zoom delay={100} duration={400} triggerOnce>
+                            <Fade delay={200} duration={600} triggerOnce>
+                                <ImageCard url='/images/hero-image-1.webp' aspect={1.2} />
+                            </Fade>
+                        </Zoom>
+                        : <ImageCard url='/images/hero-image-1.webp' aspect={1.2} />}
                 </Grid>
                 <Grid xs={12} md={4} alignSelf='flex-end'>
-                    {screenWidth >= 900 && <ImageCard url='/images/potatoes-crate.webp' aspect={1.2} />}
+                    {screenWidth >= 900 && <Zoom delay={200} duration={400} triggerOnce>
+                        <Fade delay={300} duration={600} triggerOnce>
+                            <ImageCard url='/images/potatoes-crate.webp' aspect={1.2} />
+                        </Fade>
+                    </Zoom>}
                 </Grid>
             </Grid>
             {/* <ImageWithMask width={'100%'} imgSrc={'/images/hero.webp'} maskSrc={'/images/home-hero-mask.png'} alt={'SVG image'} aspectRatio={1280 / 850} /> */}

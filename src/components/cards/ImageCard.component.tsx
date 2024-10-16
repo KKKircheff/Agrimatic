@@ -1,5 +1,4 @@
 import { Box, Card, CardContent, CardCover, Typography, useTheme } from '@mui/joy';
-// import cardImage from '/images/hero-image-1.webp'
 
 type Props = {
     url: string;
@@ -11,7 +10,7 @@ const ImageCard = ({ aspect = 1, url, text }: Props) => {
     const theme = useTheme()
     return (
         <Card sx={{ aspectRatio: aspect, width: '100%', borderColor: 'transparent', paddingX: { xs: 1, sm: 2 } }}>
-            <CardCover>
+            <CardCover >
                 <img src={url} alt="Hero image of potato crops" />
             </CardCover>
             {/* {text ?

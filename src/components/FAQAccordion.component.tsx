@@ -34,10 +34,11 @@ export const FaqAccordion = ({ faqs }: Props) => {
                     : [...prevExpandedIndices, index] // Open accordion
             );
         } else {
-            // On desktop, only one accordion can be expanded at a time.
-            setExpandedDesktopIndex(index);
+            // On desktop, toggle the accordion: close if already open, otherwise open.
+            setExpandedDesktopIndex(prevIndex => (prevIndex === index ? null : index));
         }
     };
+
 
     const isExpanded = (index: number) => {
         return isMobile

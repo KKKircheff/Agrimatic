@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/joy"
-import logo from '/images/logo.webp'
+import logo from '/images/agrimatic_logo.webp'
 import { useNavigate } from "react-router-dom";
 
 const Logo = () => {
@@ -12,7 +12,7 @@ const Logo = () => {
             bgcolor='transparent'
             sx={{ cursor: 'pointer' }}
             onClick={() => navigate('/')}>
-            <img src={logo} style={{ width: '40px', height: '40px' }} loading='eager' alt='Agrimatic logo' />
+            <img src={logo} style={{ width: '25px', height: '25px' }} loading='eager' alt='Agrimatic logo' />
             <Typography
                 level='h2'
                 fontWeight={500}

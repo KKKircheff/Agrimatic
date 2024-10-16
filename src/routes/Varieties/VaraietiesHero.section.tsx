@@ -3,6 +3,7 @@ import HeroTitle from '../../components/typography/HeroTitle.component'
 import TextContent from '../../components/typography/TextContent.component'
 import ImageCard from '../../components/cards/ImageCard.component'
 import useScreenWidth from '../../hooks/useScreenWidth'
+import { Fade, Zoom } from 'react-awesome-reveal'
 
 export const VaraietiesHero = () => {
     const screenWidth = useScreenWidth();
@@ -38,16 +39,33 @@ export const VaraietiesHero = () => {
                 alignItems='flex-end'
             >
                 <Grid xs={12} md={3} height='100%'>
-                    {screenWidth >= 900 && <ImageCard url='/images/potatoes-crate.webp' aspect={1} />}
+                    {screenWidth >= 900 && <Zoom delay={0} duration={400} triggerOnce>
+                        <Fade delay={100} duration={600} triggerOnce>
+                            <ImageCard url='/images/potatoes-crate.webp' aspect={1} />
+                        </Fade>
+                    </Zoom>}
                 </Grid>
                 <Grid xs={12} md={3} minHeight='100%' alignSelf='flex-end'>
-                    <ImageCard url='/images/variety_2.webp' aspect={screenWidth >= 900 ? 2 : 1} />
+                    {screenWidth >= 900
+                        ? <Zoom delay={100} duration={400} triggerOnce>
+                            <Fade delay={200} duration={600} triggerOnce>
+                                <ImageCard url='/images/variety_2.webp' aspect={screenWidth >= 900 ? 2 : 1} />
+                            </Fade>
+                        </Zoom>
+                        : <ImageCard url='/images/variety_2.webp' aspect={screenWidth >= 900 ? 2 : 1} />}
                 </Grid>
                 <Grid xs={12} md={3} minHeight='100%' alignSelf='flex-end'>
-                    {screenWidth >= 900 && <ImageCard url='/images/variety_3.webp' aspect={1.5} />}
+                    {screenWidth >= 900 && <Zoom delay={200} duration={400} triggerOnce>
+                        <Fade delay={300} duration={600} triggerOnce>
+                            <ImageCard url='/images/variety_3.webp' aspect={1.5} />
+                        </Fade>
+                    </Zoom>}
                 </Grid>
                 <Grid xs={12} md={3} height='100%'>
-                    {screenWidth >= 900 && <ImageCard url='/images/variety_4.webp' aspect={.8} />}
+                    {screenWidth >= 900 && <Zoom delay={400} duration={400} triggerOnce>
+                        <Fade delay={500} duration={600} triggerOnce> <ImageCard url='/images/variety_4.webp' aspect={.8} />
+                        </Fade>
+                    </Zoom>}
                 </Grid>
             </Grid>
         </Stack >

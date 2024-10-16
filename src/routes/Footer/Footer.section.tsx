@@ -3,6 +3,7 @@ import SectionWrapper from '../../components/SectionWrapper.component'
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import LocalPostOfficeOutlinedIcon from '@mui/icons-material/LocalPostOfficeOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import { TypographyStyle } from '@mui/material';
 import Logo from '../../components/navbar/Logo.section';
 import { Link } from 'react-router-dom';
@@ -87,14 +88,20 @@ const Footer = () => {
                 </Link>
                     : <Typography
                         sx={groupRow}
+                        pb={2}
                         justifyContent={{ xs: 'left', md: 'flex-end' }}
                         startDecorator={<LocalPhoneOutlinedIcon sx={{ color: 'primary.500' }} />}
                     >+359 876 962 484</Typography>
                 }
+                <Link to='https://www.facebook.com/profile.php?id=61562013416233' style={{ textDecoration: 'none' }}>
+                    <Typography
+                        sx={groupRow}
+                        justifyContent={{ xs: 'left', md: 'flex-end' }}
+                        startDecorator={<FacebookIcon sx={{ color: 'secondary.500', mt: -.5 }} />}
+                    >FACEBOOK</Typography>
+                </Link>
             </Stack>
         </SectionWrapper>
-        // </Stack>
-
     )
 }
 
