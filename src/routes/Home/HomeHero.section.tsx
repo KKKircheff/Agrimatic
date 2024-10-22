@@ -86,7 +86,7 @@ const HomeHero = () => {
                                 <ImageCard url='/images/hero-image-1.webp' aspect={1.2} />
                             </Fade>
                         </Zoom>
-                        : <ImageCard url='/images/hero-image-1.webp' aspect={1.2} />}
+                        : <ImageCard url='/images/hero-image-1-mobile.webp' aspect={1.2} />}
                 </Grid>
                 <Grid xs={12} md={4} alignSelf='flex-end'>
                     {screenWidth >= 900 && <Zoom delay={200} duration={400} triggerOnce>

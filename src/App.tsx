@@ -39,10 +39,8 @@ function App() {
     useEffect(() => {
         /* ! important how to init AOS in Vite */
         /* Also important following line in the import section - import  "aos/dist/aos.css"; */
-        console.log('in here')
         AOS.init({
             easing: 'ease-in',
-            // easing: 'ease-in-sine',
             delay: 0,
             duration: 300,
             offset: 50,

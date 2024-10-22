@@ -1,11 +1,12 @@
 export interface Variety {
     name: string;
     cookingType: string;
+    cookingTypeLetter: 'A' | 'AB' | 'B' | 'BC' | 'C';
     shape: string;
-    skin: string;
-    flesh: string;
+    skin: 'Жълт' | 'Светло жълт' | 'Червен' | 'Кафяв';
+    flesh: 'Светло жълта' | 'Бяла' | 'Жълта';
     size: string;
-    maturity: string;
+    maturity: 'Ранен' | 'Средно ранен' | 'Средни' | 'Средно късен' | 'Късен';
     licensed: boolean;
     organic: boolean;
     description: string;
@@ -15,8 +16,9 @@ export const varieties: Variety[] = [
     {
         name: 'Alexia',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овално дълги',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Светло жълта',
         size: 'Средни',
         maturity: 'Средно ранен',
@@ -28,8 +30,9 @@ export const varieties: Variety[] = [
     {
         name: 'Amora',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Светло жълта',
         size: 'Големи',
         maturity: 'Ранен',
@@ -41,8 +44,9 @@ export const varieties: Variety[] = [
     {
         name: 'Arcade',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овално дълги',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Светло жълта',
         size: 'Големи',
         maturity: 'Средно ранен',
@@ -54,8 +58,9 @@ export const varieties: Variety[] = [
     {
         name: 'Aromata',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Големи',
         maturity: 'Ранен',
@@ -67,8 +72,9 @@ export const varieties: Variety[] = [
     {
         name: 'Gerona',
         cookingType: 'Леко твърди (AB)',
+        cookingTypeLetter: 'AB',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Малки',
         maturity: 'Средно късен',
@@ -80,8 +86,9 @@ export const varieties: Variety[] = [
     {
         name: 'Ibiza',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овално дълги',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Светло жълта',
         size: 'Големи',
         maturity: 'Средно ранен',
@@ -93,8 +100,9 @@ export const varieties: Variety[] = [
     {
         name: 'Valencia',
         cookingType: 'Ронливи (BC)',
+        cookingTypeLetter: 'BC',
         shape: 'Овално дълги',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Големи',
         maturity: 'Средни',
@@ -106,8 +114,9 @@ export const varieties: Variety[] = [
     {
         name: 'Agria',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овално дълги',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Големи',
         maturity: 'Средно късен',
@@ -119,8 +128,9 @@ export const varieties: Variety[] = [
     {
         name: 'Bildtstar',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овални',
-        skin: 'Червена',
+        skin: 'Червен',
         flesh: 'Жълта',
         size: 'Средни',
         maturity: 'Средно късен',
@@ -132,8 +142,9 @@ export const varieties: Variety[] = [
     {
         name: 'Bintje',
         cookingType: 'Ронливи (BC)',
+        cookingTypeLetter: 'BC',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Бяла',
         size: 'Средни',
         maturity: 'Средни',
@@ -145,8 +156,9 @@ export const varieties: Variety[] = [
     {
         name: 'Cara',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Светло жълта',
         size: 'Големи',
         maturity: 'Късен',
@@ -158,8 +170,9 @@ export const varieties: Variety[] = [
     {
         name: 'Desiree',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овално дълги',
-        skin: 'Червена',
+        skin: 'Червен',
         flesh: 'Светло жълта',
         size: 'Средни',
         maturity: 'Средно късен',
@@ -171,8 +184,9 @@ export const varieties: Variety[] = [
     {
         name: 'Hermes',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Кръгли',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Големи',
         maturity: 'Средно късен',
@@ -184,8 +198,9 @@ export const varieties: Variety[] = [
     {
         name: 'Maritiema',
         cookingType: 'Ронливи (BC)',
+        cookingTypeLetter: 'BC',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Светло жълта',
         size: 'Големи',
         maturity: 'Средно ранен',
@@ -197,8 +212,9 @@ export const varieties: Variety[] = [
     {
         name: 'Nicola',
         cookingType: 'Твърди (A)',
+        cookingTypeLetter: 'A',
         shape: 'Овално дълги',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Средни',
         maturity: 'Средно късен',
@@ -210,8 +226,9 @@ export const varieties: Variety[] = [
     {
         name: 'Spunta',
         cookingType: 'Ронливи (BC)',
+        cookingTypeLetter: 'BC',
         shape: 'Овално дълги',
-        skin: 'Светло жълта',
+        skin: 'Светло жълт',
         flesh: 'Светло жълта',
         size: 'Големи',
         maturity: 'Средно ранен',
@@ -223,8 +240,9 @@ export const varieties: Variety[] = [
     {
         name: 'Colomba',
         cookingType: 'Леко твърди (AB)',
+        cookingTypeLetter: 'AB',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Средни',
         maturity: 'Средно ранен',
@@ -236,8 +254,9 @@ export const varieties: Variety[] = [
     {
         name: 'EKO Vitabella',
         cookingType: 'Твърди (A)',
+        cookingTypeLetter: 'A',
         shape: 'Овални',
-        skin: 'Светло жълта',
+        skin: 'Светло жълт',
         flesh: 'Светло жълта',
         size: 'Средни',
         maturity: 'Средни',
@@ -249,8 +268,9 @@ export const varieties: Variety[] = [
     {
         name: 'Innovator',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овално дълги',
-        skin: 'Кафява',
+        skin: 'Кафяв',
         flesh: 'Светло жълта',
         size: 'Големи',
         maturity: 'Средно ранен',
@@ -262,8 +282,9 @@ export const varieties: Variety[] = [
     {
         name: 'Melody',
         cookingType: 'Леко ронливи (B)',
+        cookingTypeLetter: 'B',
         shape: 'Овални',
-        skin: 'Жълта',
+        skin: 'Жълт',
         flesh: 'Жълта',
         size: 'Средни',
         maturity: 'Средно късен',
@@ -275,8 +296,9 @@ export const varieties: Variety[] = [
     {
         name: 'Mozart',
         cookingType: 'Леко твърди (AB)',
+        cookingTypeLetter: 'AB',
         shape: 'Овални',
-        skin: 'Червена',
+        skin: 'Червен',
         flesh: 'Жълта',
         size: 'Големи',
         maturity: 'Средно късен',
