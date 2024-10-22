@@ -20,6 +20,7 @@ const BurgerButton = ({ isDrawerOpen, setIsDrawerOpen }: Props) => {
                 alignItems: 'center',
                 borderRadius: theme.radius.xl,
             }}
+            aria-label='burger button to open and close the side menu bar'
             onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
             {isDrawerOpen ? <CloseIcon sx={{ color: 'neutral.900' }} /> : <Menu sx={{ color: 'neutral.900' }} />}
         </IconButton>

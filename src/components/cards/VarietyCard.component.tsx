@@ -14,10 +14,10 @@ export const VarietyCard = ({ variety }: Props) => {
         <Card
             variant="outlined"
             sx={{
-                minHeight: "100%", // Ensure card stretches to fill the parent grid item
-                display: "flex", // Enable flexbox on the card
-                flexDirection: "column", // Stack elements vertically
-                justifyContent: "space-between", // Distribute space evenly
+                minHeight: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
                 backgroundColor: "primary.100",
                 borderColor: "primary.200",
                 padding: 1.5,
@@ -27,7 +27,7 @@ export const VarietyCard = ({ variety }: Props) => {
             <Grid container direction={{ xs: 'column', md: 'row' }} spacing={3}>
                 <Grid xs={12} md={4} lg={3} xl={2.5} height='100%' >
                     <ImageCard
-                        url={variety.skin === 'Жълта' ? '/images/potato_yellow.webp' : variety.skin === 'Светло жълта' ? '/images/potato_light_yellow.webp' : '/images/potato_red.webp'}
+                        url={variety.skin === 'Жълт' ? '/images/potato_yellow.webp' : variety.skin === 'Светло жълт' ? '/images/potato_light_yellow.webp' : '/images/potato_red.webp'}
                         aspect={1} />
                 </Grid>
 
@@ -50,7 +50,7 @@ export const VarietyCard = ({ variety }: Props) => {
                                 <CardTextContent textColor='primary.500'>Сорт: <CardTextContent>{variety.maturity}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Форма: <CardTextContent>{variety.shape}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Размер: <CardTextContent>{variety.size}</CardTextContent></CardTextContent>
-                                <CardTextContent textColor='primary.500'>Кора: <CardTextContent>{variety.skin}</CardTextContent></CardTextContent>
+                                <CardTextContent textColor='primary.500'>Цвят кора: <CardTextContent>{variety.skin}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Сърцевина: <CardTextContent>{variety.flesh}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Био-органик: <CardTextContent>{variety.organic ? 'Да' : 'Не'}</CardTextContent></CardTextContent>
                                 <CardTextContent textColor='primary.500'>Лиценз: <CardTextContent>{variety.licensed ? 'Да' : 'Не'}</CardTextContent></CardTextContent>

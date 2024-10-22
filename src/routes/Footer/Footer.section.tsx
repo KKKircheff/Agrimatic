@@ -82,6 +82,7 @@ const Footer = () => {
                 {isMobile ? <Link to='tel:+359876962484' style={{ textDecoration: 'none' }}>
                     <Typography
                         sx={groupRow}
+                        pb={2}
                         justifyContent={{ xs: 'left', md: 'flex-end' }}
                         startDecorator={<LocalPhoneOutlinedIcon sx={{ color: 'primary.500' }} />}
                     >+359 876 962 484</Typography>

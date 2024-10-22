@@ -7,10 +7,11 @@ const Logo = () => {
 
     return (
         <Stack
-            role='logo'
+            role='button'
             direction='row' alignItems='center' gap={1}
             bgcolor='transparent'
             sx={{ cursor: 'pointer' }}
+            aria-label="Logo button Home page"
             onClick={() => navigate('/')}>
             <img src={logo} style={{ width: '25px', height: '25px' }} loading='eager' alt='Agrimatic logo' />
             <Typography
