@@ -12,7 +12,7 @@ export const FilterSelect = <T extends string>({ label, value, options, onChange
         <Select
             placeholder={label}
             value={value as string | null}
-            onChange={(e, newValue) => onChange(newValue as T | 'All' | null)}
+            onChange={(_, newValue) => onChange(newValue as T | 'All' | null)}
             sx={{ width: '100%' }}
         >
             {options.map(option => (
