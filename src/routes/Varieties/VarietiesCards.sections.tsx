@@ -4,47 +4,70 @@ import { varieties, Variety } from "../../routes/Varieties/varaties";
 import { useState } from "react";
 import { FilterSelect } from "../../components/filters/FilterSelect.component";
 
-const cookingTypeLetters: Array<Variety['cookingTypeLetter'] | 'All'> = ['All', 'A', 'AB', 'B', 'BC', 'C'];
-const skinColors: Array<Variety['skin'] | 'All'> = ['All', 'Жълт', 'Светло жълт', 'Червен', 'Кафяв'];
-const maturities: Array<Variety['maturity'] | 'All'> = ['All', 'Ранен', 'Средно ранен', 'Средни', 'Средно късен', 'Късен'];
+export type FilterArrays = {
+    value: 'All' | Variety['maturity'] | Variety['skin'] | Variety['cookingTypeLetter']
+    description: string,
+}
+// Change states to objects
+const cookingTypeLetterOptions: FilterArrays[] = [
+    { value: 'All', description: 'Твърдост при готвене от A до C - всички' },
+    { value: 'A', description: 'Tвърди - A' },
+    { value: 'AB', description: 'Леко твърди - AB' },
+    { value: 'B', description: 'Средна твърдост - B' },
+    { value: 'BC', description: 'Ронливи - BC' },
+    { value: 'C', description: 'Много Ронливи - C' }
+];
+
+const skinOptions: FilterArrays[] = [
+    { value: 'All', description: 'Цвят на картофа - всички' },
+    { value: 'Жълт', description: 'Жълта' },
+    { value: 'Светло жълт', description: 'Светло жълта' },
+    { value: 'Червен', description: 'Червена' },
+    { value: 'Кафяв', description: 'Кафява' }
+];
+
+const maturityOptions: FilterArrays[] = [
+    { value: 'All', description: 'Сезон на садене - всички' },
+    { value: 'Ранен', description: 'Ранен' },
+    { value: 'Средно ранен', description: 'Средно ранен' },
+    { value: 'Средни', description: 'Средни' },
+    { value: 'Средно късен', description: 'Средно късен' },
+    { value: 'Късен', description: 'Късен' }
+];
 
 export const VarietiesCards = () => {
-    const [selectedCookingTypeLetter, setSelectedCookingTypeLetter] = useState<Variety['cookingTypeLetter'] | 'All' | null>('All');
-    const [selectedSkin, setSelectedSkin] = useState<Variety['skin'] | 'All' | null>('All');
-    const [selectedMaturity, setSelectedMaturity] = useState<Variety['maturity'] | 'All' | null>('All');
+    const [selectedCookingTypeLetter, setSelectedCookingTypeLetter] = useState<FilterArrays>({ value: 'All', description: 'Твърдост при готвене от A до C - всички' });
+    const [selectedSkin, setSelectedSkin] = useState<FilterArrays>({ value: 'All', description: 'Цвят на картофа - всички' });
+    const [selectedMaturity, setSelectedMaturity] = useState<FilterArrays>({ value: 'All', description: 'Сезон на садене - всички' });
 
     const filteredVarieties = varieties.filter(variety => {
         return (
-            (selectedCookingTypeLetter === "All" || variety.cookingTypeLetter === selectedCookingTypeLetter) &&
-            (selectedSkin === "All" || variety.skin === selectedSkin) &&
-            (selectedMaturity === "All" || variety.maturity === selectedMaturity)
+            (selectedCookingTypeLetter.value === "All" || variety.cookingTypeLetter === selectedCookingTypeLetter.value) &&
+            (selectedSkin.value === "All" || variety.skin === selectedSkin.value) &&
+            (selectedMaturity.value === "All" || variety.maturity === selectedMaturity.value)
         );
     });
 
     return (
         <Stack spacing={4}>
-            <Stack direction={{ xs: 'column', md: 'row' }} gap={4} pb={{ xs: 1, md: 1 }}>
-                <FilterSelect
-                    label="Твърдост при готвене от A до C"
-                    value={selectedCookingTypeLetter}
-                    options={cookingTypeLetters}
-                    onChange={setSelectedCookingTypeLetter}
-                />
-
-                <FilterSelect
-                    label="Цвят на картофа"
-                    value={selectedSkin}
-                    options={skinColors}
-                    onChange={setSelectedSkin}
-                />
-
-                <FilterSelect
-                    label="Сезон на садене"
-                    value={selectedMaturity}
-                    options={maturities}
-                    onChange={setSelectedMaturity}
-                />
-            </Stack>
+            <FilterSelect
+                label="Filter by Cooking Type Letter"
+                value={selectedCookingTypeLetter}
+                options={cookingTypeLetterOptions}
+                onChange={setSelectedCookingTypeLetter}
+            />
+            <FilterSelect
+                label="Filter by Skin"
+                value={selectedSkin}
+                options={skinOptions}
+                onChange={setSelectedSkin}
+            />
+            <FilterSelect
+                label="Filter by Maturity"
+                value={selectedMaturity}
+                options={maturityOptions}
+                onChange={setSelectedMaturity}
+            />
 
             {filteredVarieties.map((variety, index) => (
                 <VarietyCard key={variety.name + index} variety={variety} />

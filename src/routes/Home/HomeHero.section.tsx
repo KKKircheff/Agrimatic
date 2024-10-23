@@ -55,7 +55,7 @@ const HomeHero = () => {
                         color='neutral'
                         onClick={() => navigate('/varieties')}
                         endDecorator={<ArrowOutwardIcon sx={{ marginLeft: '-5px' }} />}>
-                        <Typography textColor='inherit' fontSize='inherit'>Семена</Typography>
+                        <Typography textColor='inherit' fontSize='inherit'>Сортове</Typography>
                     </BlackButton>
                     <BlackButton
                         size='lg'

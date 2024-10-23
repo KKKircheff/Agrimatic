@@ -1,23 +1,29 @@
 import { Select, Option } from "@mui/joy";
+import { FilterArrays } from "../../routes/Varieties/VarietiesCards.sections";
 
-interface FilterSelectProps<T extends string> {
+type FilterSelectProps = {
     label: string;
-    value: T | 'All' | null;
-    options: Array<T | 'All'>;
-    onChange: (value: T | 'All' | null) => void;
+    value: FilterArrays;
+    options: Array<FilterArrays>;
+    onChange: (selected: FilterArrays) => void;
 }
 
-export const FilterSelect = <T extends string>({ label, value, options, onChange }: FilterSelectProps<T>) => {
+export const FilterSelect = ({ label, value, options, onChange }: FilterSelectProps) => {
     return (
         <Select
+            color="neutral"
             placeholder={label}
-            value={value as string | null}
-            onChange={(_, newValue) => onChange(newValue as T | 'All' | null)}
-            sx={{ width: '100%' }}
+            value={value.value}
+            onChange={(_, newValue) => {
+                const selectedOption = options.find(option => option.value === newValue);
+                if (selectedOption) {
+                    onChange(selectedOption);
+                }
+            }}
         >
             {options.map(option => (
-                <Option key={option} value={option}>
-                    {option === 'All' ? `${label} - всички` : option}
+                <Option key={option.value} value={option.value}>
+                    {option.description}
                 </Option>
             ))}
         </Select>
