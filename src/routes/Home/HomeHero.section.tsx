@@ -96,7 +96,7 @@ const HomeHero = () => {
                     </Zoom>}
                 </Grid>
             </Grid>
-            {/* <ImageWithMask width={'100%'} imgSrc={'/images/hero-image-1.webp'} alt={'SVG image'} aspectRatio={1280 / 850} /> */}
+            {/* <ImageWithMask imgSrc={'/images/hero-image-1.webp'} width={'100%'} aspectRatio={1280 / 850} alt={'SVG image'} mt='-100px' /> */}
         </Stack>
     )
 }
