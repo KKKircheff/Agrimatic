@@ -50,3 +50,8 @@ pnpm add react-device-detect
 
 pnpm add react-scroll
 pnpm add @types/react-scroll
+
+
+how to mask image with svg video:
+
+https://youtu.be/StsPKN3M-Bg

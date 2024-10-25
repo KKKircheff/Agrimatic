@@ -8,7 +8,7 @@ import ImageCard from '../../components/cards/ImageCard.component';
 import useScreenWidth from "../../hooks/useScreenWidth";
 import { useNavigate } from "react-router-dom";
 import { Fade, Zoom } from "react-awesome-reveal";
-// import ImageWithMask from '../../components/ImageWithMask';
+// import ImageWithMask from "../../components/ImageWithMask";
 
 const scrollToContact = () => {
     scroller.scrollTo('information_section', {
@@ -96,7 +96,7 @@ const HomeHero = () => {
                     </Zoom>}
                 </Grid>
             </Grid>
-            {/* <ImageWithMask width={'100%'} imgSrc={'/images/hero.webp'} maskSrc={'/images/home-hero-mask.png'} alt={'SVG image'} aspectRatio={1280 / 850} /> */}
+            {/* <ImageWithMask width={'100%'} imgSrc={'/images/hero-image-1.webp'} alt={'SVG image'} aspectRatio={1280 / 850} /> */}
         </Stack>
     )
 }
