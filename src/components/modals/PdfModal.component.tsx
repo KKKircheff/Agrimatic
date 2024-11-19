@@ -16,37 +16,38 @@ import useScreenSize from '../../hooks/useScreenSize';
 import { isMobile } from 'react-device-detect';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { getFilesUrlListFromStorageBucker } from '../../utils/firebase-utils';
-
 
 type Props = {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    index?: number,
+    pdfName: string;
 }
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
-const PdfModal = ({ isOpen, setIsOpen, index = 0 }: Props) => {
+const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
     const c = useTheme().palette
 
     const [numPages, setNumPages] = useState<number>();
     const [pageNumber, setPageNumber] = useState(1);
-    const [pdfScale, setPdfScale] = useState(1)
-
-    const [pdfList, setPdfList] = useState<string[] | null>(null);
+    const [pdfScale, setPdfScale] = useState(1);
+    const [pdfFile, setPdfFile] = useState<string | null>(null);
 
     useEffect(() => {
         const loadPdf = async () => {
             try {
-                const list = await getFilesUrlListFromStorageBucker('Catalogues') as string[];
-                setPdfList([...list]);
+                const pdfModule = await import(`../../../public/varitiesDocs/${pdfName}.pdf`);
+                setPdfFile(pdfModule.default);
             } catch (error) {
                 console.error('Error loading PDF:', error);
+                setPdfFile(null);
             }
         };
 
-        loadPdf();
-    }, []);
+        if (pdfName) {
+            loadPdf();
+        }
+    }, [pdfName]);
 
     const { screenWidth } = useScreenSize();
 
@@ -108,70 +109,72 @@ const PdfModal = ({ isOpen, setIsOpen, index = 0 }: Props) => {
         };
     }, [handleKeyPress]);
 
-
+    if (!pdfFile) return null;
 
     return (
-        <>
-            <Modal open={isOpen} onClose={handleClose}>
-                <ModalDialog variant="outlined" role="alertdialog">
-
-                    <Stack direction='row' justifyContent='space-between' alignItems='center'>
-                        <Typography textAlign='center' textColor='neutral.400'>
-                            Page {pageNumber} of {numPages}
-                        </Typography>
-                        <Stack direction='row' spacing={2} >
-                            {!isMobile && <RemoveCircleOutlineIcon
-                                sx={{
-                                    color: c.neutral[400],
-                                    cursor: 'pointer',
-                                    transform: 'scale(1.2)'
-                                }}
-                                onClick={() => handleScale(-.1)}
-                            />}
-                            {!isMobile && <AddCircleOutlineIcon
-                                sx={{
-                                    color: c.neutral[400],
-                                    cursor: 'pointer',
-                                    transform: 'scale(1.2)'
-                                }}
-                                onClick={() => handleScale(.1)}
-                            />}
-                        </Stack>
-                        <Button variant="plain" color="primary" onClick={handleClose}>
-                            Close
-                        </Button>
+        <Modal open={isOpen} onClose={handleClose} sx={{ zIndex: 2000 }}>
+            <ModalDialog variant="outlined" role="alertdialog">
+                <Stack direction='row' justifyContent='space-between' alignItems='center'>
+                    <Typography textAlign='center' textColor='neutral.400'>
+                        Page {pageNumber} of {numPages}
+                    </Typography>
+                    <Stack direction='row' spacing={2} >
+                        {!isMobile && <RemoveCircleOutlineIcon
+                            sx={{
+                                color: c.neutral[400],
+                                cursor: 'pointer',
+                                transform: 'scale(1.2)'
+                            }}
+                            onClick={() => handleScale(-.1)}
+                        />}
+                        {!isMobile && <AddCircleOutlineIcon
+                            sx={{
+                                color: c.neutral[400],
+                                cursor: 'pointer',
+                                transform: 'scale(1.2)'
+                            }}
+                            onClick={() => handleScale(.1)}
+                        />}
                     </Stack>
+                    <Button variant="plain" color="primary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Stack>
 
-                    <DialogContent sx={{ overflowX: 'hidden', scrollbarWidth: 'thin' }}>
-                        <Stack sx={{ marginLeft: { xs: `${-(7200 / screenWidth + 3)}px`, sm: 0 } }}>
-                            <Document file={pdfList?.length ? pdfList[index] : ''} onLoadSuccess={onDocumentLoadSuccess}>
-                                <Page pageNumber={pageNumber} width={pdfWidth} scale={pdfScale} />
-                            </Document>
-                        </Stack>
-                    </DialogContent>
+                <DialogContent sx={{ overflowX: 'hidden', scrollbarWidth: 'thin' }}>
+                    <Stack sx={{ marginLeft: { xs: `${-(7200 / screenWidth + 3)}px`, sm: 0 } }}>
+                        <Document
+                            file={pdfFile}
+                            onLoadSuccess={onDocumentLoadSuccess}
+                        >
+                            <Page pageNumber={pageNumber} width={pdfWidth} scale={pdfScale} />
+                        </Document>
+                    </Stack>
+                </DialogContent>
 
-                    <DialogActions>
-                        <Stack direction='row' justifyContent='space-between' width='100%'>
-                            <Button
+                <DialogActions>
+                    <Stack direction='row' justifyContent='space-between' width='100%'>
+                        {pageNumber !== 1
+                            ? <Button
                                 variant="plain"
                                 color="primary"
                                 onClick={() => handlePageChange(-1)}
                                 startDecorator={<KeyboardDoubleArrowLeftOutlinedIcon />}>
                                 Previous
                             </Button>
-                            <Button
-                                variant="plain"
-                                color="primary"
-                                onClick={() => handlePageChange(+1)}
-                                endDecorator={<KeyboardDoubleArrowRightOutlinedIcon />}>
-                                Next
-                            </Button>
-                        </Stack>
-                    </DialogActions>
-
-                </ModalDialog>
-            </Modal >
-        </>
+                            : <div></div>
+                        }
+                        {pageNumber !== numPages && <Button
+                            variant="plain"
+                            color="primary"
+                            onClick={() => handlePageChange(+1)}
+                            endDecorator={<KeyboardDoubleArrowRightOutlinedIcon />}>
+                            Next
+                        </Button>}
+                    </Stack>
+                </DialogActions>
+            </ModalDialog>
+        </Modal>
     );
 }
 
