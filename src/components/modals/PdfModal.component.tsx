@@ -145,23 +145,37 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
 
                 <DialogActions>
                     <Stack direction='row' justifyContent='space-between' width='100%'>
-                        {pageNumber !== 1
-                            ? <Button
-                                variant="plain"
-                                color="primary"
-                                onClick={() => handlePageChange(-1)}
-                                startDecorator={<KeyboardDoubleArrowLeftOutlinedIcon />}>
-                                Previous
-                            </Button>
-                            : <div></div>
-                        }
-                        {pageNumber !== numPages && <Button
+                        <Button
                             variant="plain"
                             color="primary"
+                            disabled={pageNumber === 1}
+                            onClick={() => handlePageChange(-1)}
+                            startDecorator={<KeyboardDoubleArrowLeftOutlinedIcon />}>
+                            Previous
+                        </Button>
+
+
+                        <Button
+                            variant="plain"
+                            color="primary"
+                            onClick={() => {
+                                const link = document.createElement('a');
+                                link.href = `/varietiesDocs/${pdfName}.pdf`;
+                                link.download = pdfName;
+                                link.click();
+                            }}
+                        >
+                            Download
+                        </Button>
+
+                        <Button
+                            variant="plain"
+                            color="primary"
+                            disabled={pageNumber === numPages}
                             onClick={() => handlePageChange(+1)}
                             endDecorator={<KeyboardDoubleArrowRightOutlinedIcon />}>
                             Next
-                        </Button>}
+                        </Button>
                     </Stack>
                 </DialogActions>
             </ModalDialog>
