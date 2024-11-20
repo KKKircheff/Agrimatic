@@ -1,4 +1,4 @@
-import { Modal, ModalDialog, ModalClose, Stack, Typography, Sheet, Box } from '@mui/joy';
+import { Modal, ModalClose, Stack, Typography, Box } from '@mui/joy';
 import { VarietyData } from '../../lib/varietyiesData';
 import { DialogContent } from '@mui/joy';
 

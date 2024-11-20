@@ -36,7 +36,9 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
     useEffect(() => {
         const loadPdf = async () => {
             try {
-                const pdfModule = await import(`../../../public/varitiesDocs/${pdfName}.pdf`);
+                // const pdfModule = await import(`../../../public/varitiesDocs/${pdfName}.pdf`);
+                const pdfModule = await import(`/src/assets/varitiesDocs/${pdfName}.pdf`);
+                // const pdfModule = await import(`/varitiesDocs/${pdfName}.pdf`);
                 setPdfFile(pdfModule.default);
             } catch (error) {
                 console.error('Error loading PDF:', error);
