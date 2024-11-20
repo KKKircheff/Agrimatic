@@ -1,6 +1,6 @@
 import { Stack } from "@mui/joy";
 import { VarietyCard } from "../../components/cards/VarietyCard.component";
-import { varieties, Variety } from "../../routes/Varieties/varaties";
+import { varieties, Variety } from "../../lib/varaties";
 import { useState } from "react";
 import { FilterSelect } from "../../components/filters/FilterSelect.component";
 

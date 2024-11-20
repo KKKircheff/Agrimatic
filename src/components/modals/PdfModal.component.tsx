@@ -132,7 +132,6 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
                         variant="plain"
                         color="primary"
                         onClick={handleClose}
-                        sx={{ px: 0 }}
                     >
                         Затвори
                     </Button>
