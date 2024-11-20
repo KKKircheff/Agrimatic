@@ -16,6 +16,7 @@ import useScreenSize from '../../hooks/useScreenSize';
 import { isMobile } from 'react-device-detect';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 type Props = {
     isOpen: boolean;
@@ -107,14 +108,14 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
             <ModalDialog variant="outlined" role="alertdialog">
                 <Stack direction='row' justifyContent='space-between' alignItems='center'>
                     <Typography textAlign='center' textColor='neutral.400'>
-                        Page {pageNumber} of {numPages}
+                        Страница {pageNumber} от {numPages}
                     </Typography>
-                    <Stack direction='row' spacing={2} >
+                    <Stack direction='row' spacing={{ xs: 0, sm: 2 }} >
                         {!isMobile && <RemoveCircleOutlineIcon
                             sx={{
                                 color: c.neutral[400],
                                 cursor: 'pointer',
-                                transform: 'scale(1.2)'
+                                transform: 'scale(1)'
                             }}
                             onClick={() => handleScale(-.1)}
                         />}
@@ -122,13 +123,18 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
                             sx={{
                                 color: c.neutral[400],
                                 cursor: 'pointer',
-                                transform: 'scale(1.2)'
+                                transform: 'scale(1)'
                             }}
                             onClick={() => handleScale(.1)}
                         />}
                     </Stack>
-                    <Button variant="plain" color="primary" onClick={handleClose}>
-                        Close
+                    <Button
+                        variant="plain"
+                        color="primary"
+                        onClick={handleClose}
+                        sx={{ px: 0 }}
+                    >
+                        Затвори
                     </Button>
                 </Stack>
 
@@ -143,21 +149,31 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
                     </Stack>
                 </DialogContent>
 
-                <DialogActions>
-                    <Stack direction='row' justifyContent='space-between' width='100%'>
+                <DialogActions
+                    sx={{
+                        marginLeft: { xs: -2, sm: 0 }
+                    }
+                    }>
+                    <Stack
+                        direction='row'
+                        justifyContent='space-between'
+                        width='100%'
+                    >
                         <Button
                             variant="plain"
                             color="primary"
+                            sx={{ px: { xs: 1, sm: 2, md: 4 } }}
                             disabled={pageNumber === 1}
                             onClick={() => handlePageChange(-1)}
-                            startDecorator={<KeyboardDoubleArrowLeftOutlinedIcon />}>
-                            Previous
+                        >
+                            {<KeyboardDoubleArrowLeftOutlinedIcon />}Предишна
                         </Button>
 
 
                         <Button
                             variant="plain"
                             color="primary"
+                            sx={{ px: { xs: 1, sm: 2, md: 4 } }}
                             onClick={() => {
                                 const link = document.createElement('a');
                                 link.href = `/varietiesDocs/${pdfName}.pdf`;
@@ -165,21 +181,22 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
                                 link.click();
                             }}
                         >
-                            Download
+                            Запази{<ArrowDownwardIcon sx={{ fontSize: '16px' }} />}
                         </Button>
 
                         <Button
                             variant="plain"
                             color="primary"
+                            sx={{ px: { xs: 1, sm: 2, md: 4 } }}
                             disabled={pageNumber === numPages}
                             onClick={() => handlePageChange(+1)}
-                            endDecorator={<KeyboardDoubleArrowRightOutlinedIcon />}>
-                            Next
+                        >
+                            Следваща{<KeyboardDoubleArrowRightOutlinedIcon />}
                         </Button>
                     </Stack>
                 </DialogActions>
             </ModalDialog>
-        </Modal>
+        </Modal >
     );
 }
 
