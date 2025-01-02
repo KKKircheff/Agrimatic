@@ -56,7 +56,7 @@ const ContactForm = () => {
 
     const contactTemplate = (formValues: ContactInfo, created: Date, time_stamp: number) => {
         return ({
-            to: ["kircheff@protonmail.com", "georgiev.gancho@gmail.com"],
+            to: ["kircheff@protonmail.com", "georgiev.gancho@gmail.com", "office@agrimatic.bg"],
             message: {
                 subject: "Запитване Agrimatic.bg",
                 text: "Some text that maybe is needed",

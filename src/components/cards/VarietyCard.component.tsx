@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Grid, Stack } from "@mui/joy"
+import { Box, Card, CardContent, Grid, Stack, Button } from "@mui/joy"
 import ImageCard from "./ImageCard.component"
 import CardTitle from "../typography/CardTitle.component"
 import CardTextContent from "../typography/CardTextContent.componet"
@@ -39,7 +39,7 @@ export const VarietyCard = ({ variety }: Props) => {
                 onClick={handleOpen}
             >
                 <Grid container direction={{ xs: 'column', md: 'row' }} spacing={3}>
-                    <Grid xs={12} md={4} lg={3} xl={2.5} height='100%' >
+                    <Grid xs={12} md={4} lg={3} xl={2.5} height='100%'>
                         <ImageCard
                             url={variety.skin === 'Жълт' ? '/images/potato_yellow.webp' : variety.skin === 'Светло жълт' ? '/images/potato_light_yellow.webp' : '/images/potato_red.webp'}
                             aspect={1} />
@@ -54,13 +54,15 @@ export const VarietyCard = ({ variety }: Props) => {
                         }}>
                             <Stack direction="row" justifyContent="space-between" alignItems='center'>
                                 <CardTitle>{variety.name}</CardTitle>
-                                <CardTextContent
-                                    bgcolor='primary.200' textColor='primary.700'
-                                    px={1.3} py={0.2} borderRadius='md'
-                                >{variety.cookingType}</CardTextContent>
+                                <Button
+                                    sx={{
+                                        opacity: .85
+                                    }}
+                                >Още за сорта</Button>
                             </Stack>
                             <Stack direction={{ xs: 'column', md: 'row' }} mt='auto'>
                                 <Stack minWidth='220px' py={{ xs: 2, md: 0 }}>
+                                    <CardTextContent textColor='primary.500'>Текстура: <CardTextContent>{variety.cookingType}</CardTextContent></CardTextContent>
                                     <CardTextContent textColor='primary.500'>Сорт: <CardTextContent>{variety.maturity}</CardTextContent></CardTextContent>
                                     <CardTextContent textColor='primary.500'>Форма: <CardTextContent>{variety.shape}</CardTextContent></CardTextContent>
                                     <CardTextContent textColor='primary.500'>Размер: <CardTextContent>{variety.size}</CardTextContent></CardTextContent>
@@ -80,6 +82,6 @@ export const VarietyCard = ({ variety }: Props) => {
             </Card >
             {/* {isOpen && <VarietyModal variety={varaietyData} open={isOpen} onClose={handleClose} />} */}
             {isOpen && <PdfModal pdfName={variety.name.toLowerCase()} isOpen={isOpen} setIsOpen={handleClose} />}
-        </Box>
+        </Box >
     )
 }

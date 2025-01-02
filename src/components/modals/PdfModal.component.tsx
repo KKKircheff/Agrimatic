@@ -142,6 +142,7 @@ const PdfModal = ({ isOpen, setIsOpen, pdfName }: Props) => {
                         <Document
                             file={pdfFile}
                             onLoadSuccess={onDocumentLoadSuccess}
+                            onLoadError={() => setIsOpen(false)}
                         >
                             <Page pageNumber={pageNumber} width={pdfWidth} scale={pdfScale} />
                         </Document>
